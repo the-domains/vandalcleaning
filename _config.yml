@@ -2,6 +2,7 @@ name: vandalcleaning
 favicon: null
 layout_spectrum: 0.24574908637441695
 typography_spectrum: 0.13773907674476504
+title: vandal.cleaning
 cta:
   domain: null
   bucket: null
