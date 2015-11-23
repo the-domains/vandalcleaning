@@ -1,26 +1,23 @@
 ---
-inFeed: true
-hasPage: true
-inNav: true
-inLanguage: null
-starred: false
-keywords: []
-description: ''
-datePublished: '2015-11-23T17:21:48.341Z'
-dateModified: '2015-11-23T17:19:15.064Z'
 author: []
 related: []
-app_links: []
-title: 'Art Crimes: September 11 Murals'
-authors: []
 publisher:
-  name: Graffiti
-  domain: www.graffiti.org
   url: 'http://www.graffiti.org'
+  name: Graffiti
   favicon: 'http://www.graffiti.org/favicon.ico'
+  domain: www.graffiti.org
+keywords: []
+description: ''
+app_links: []
+isBasedOnUrl: 'http://www.graffiti.org/911/index.html'
+title: 'Art Crimes: September 11 Murals'
+datePublished: '2015-11-23T21:22:04.870Z'
+dateModified: '2015-11-23T21:21:47.746Z'
 sourcePath: _posts/2015-11-23-art-crimes-september-11-murals.md
 published: true
-url: art-crimes-september-11-murals/index.html
+inFeed: true
+hasPage: false
+inNav: false
 _context: 'http://schema.org'
 _type: MediaObject
 
