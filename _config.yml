@@ -1,0 +1,28 @@
+name: vandalcleaning
+favicon: null
+layout_spectrum: 0.24574908637441695
+typography_spectrum: 0.13773907674476504
+cta:
+  domain: null
+  bucket: null
+  version: null
+analytics:
+  google: null
+  facebook: null
+  twitter: null
+opengraph:
+  image: null
+  type: null
+  appId: null
+color:
+  brandColors:
+    - '#ADD7F6'
+    - '#87BFFF'
+    - '#3F8EFC'
+    - '#2667FF'
+    - '#3B28CC'
+  brandStrength: 0.3841308979317546
+  lightness: 0.9939320671837777
+  saturation: 0.4790216195397079
+  rhythmicContrast: 0.8655121210031211
+purpose: []
