@@ -1,6 +1,6 @@
 name: vandalcleaning
 favicon: null
-layout_spectrum: 0.24574908637441695
+layout_spectrum: 1
 typography_spectrum: 0.13773907674476504
 title: vandal.cleaning
 cta:
@@ -17,13 +17,13 @@ opengraph:
   appId: null
 color:
   brandColors:
-    - '#ADD7F6'
-    - '#87BFFF'
-    - '#3F8EFC'
-    - '#2667FF'
-    - '#3B28CC'
-  brandStrength: 0.6875
-  lightness: 0.9939320671837777
-  saturation: 0.4790216195397079
-  rhythmicContrast: 0.8655121210031211
+    - '#ff6600'
+    - '#ffffff'
+    - '#ff8c40'
+    - '#ffd9c0'
+    - '#ffc39c'
+  brandStrength: 0.25
+  lightness: 0.3125
+  saturation: 0.4375
+  rhythmicContrast: 0.75
 purpose: []
