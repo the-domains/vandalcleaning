@@ -1,23 +1,23 @@
 ---
 inFeed: true
 hasPage: true
-inNav: false
+inNav: true
 inLanguage: null
-starred: true
+starred: false
 keywords: []
 description: 'The Words: A Graffiti Glossary  also in Japanese! and a new one:   translated by Takuya Hiramoto    Slapped together by Chad with help from Schmoo. Thanks to Ra'
-datePublished: '2015-11-23T17:10:17.063Z'
-dateModified: '2015-11-23T17:10:04.355Z'
+datePublished: '2015-11-23T17:23:10.345Z'
+dateModified: '2015-11-23T17:23:06.153Z'
 author: []
 title: A Graffiti Glossary
+sourcePath: _posts/2015-11-23-a-graffiti-glossary.md
+published: true
 authors: []
 publisher:
   name: graffiti.org
   domain: www.graffiti.org
   url: null
   favicon: null
-sourcePath: _posts/2015-11-23-a-graffiti-glossary.md
-published: true
 url: a-graffiti-glossary/index.html
 _context: 'http://schema.org'
 _type: Article
