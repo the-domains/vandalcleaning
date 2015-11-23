@@ -6,8 +6,8 @@ inLanguage: null
 starred: true
 keywords: []
 description: 'The Words: A Graffiti Glossary  also in Japanese! and a new one:   translated by Takuya Hiramoto    Slapped together by Chad with help from Schmoo. Thanks to Ra'
-datePublished: '2015-11-23T17:10:04.355Z'
-dateModified: '2015-11-23T17:09:06.018Z'
+datePublished: '2015-11-23T17:10:17.063Z'
+dateModified: '2015-11-23T17:10:04.355Z'
 author: []
 title: A Graffiti Glossary
 authors: []
