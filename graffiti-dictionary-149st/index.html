@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Graffiti Dictionary @149st - vandalcleaning</title><link href="../rss.xml" title="vandal.cleaning feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.16.22"><meta name="the-grid-solution" content="9680a52b-7c1d-4ecb-ab5a-16e97bbce8e6"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>Graffiti Dictionary @149st - vandalcleaning</title><link href="../rss.xml" title="vandal.cleaning feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="87139350-df20-4c4a-9f0b-7cdd24e3672d"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -202,6 +202,14 @@ body {
 }
 .stack {
   z-index: 1;
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+}
+.group,
+.aside,
+.decoration {
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -250,6 +258,9 @@ a:active {
   transition: color 0.1s ease-in, background-color 0.1s ease-out;
   -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-out;
 }
+a.aside {
+  display: inline-block;
+}
 html.exporting a {
   transition: none;
 }
@@ -259,11 +270,21 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
+.media iframe {
+  transition: 0.3s opacity ease-in;
+  -webkit-transition: 0.3s opacity ease-in;
+}
 h1 a,
 h2 a,
 h3 a {
   font-weight: inherit;
   letter-spacing: inherit;
+}
+a {
+  -webkit-box-decoration-break: clone;
+  -ms-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .text-decoration {
   -webkit-box-decoration-break: clone;
@@ -277,36 +298,50 @@ h3 a {
   margin-left: 1.5em;
 }
 .decoration {
-  position: relative;
   pointer-events: none;
+}
+.svg {
+  position: relative;
   background-color: currentColor;
 }
-.decoration > svg {
+.svg > svg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.decoration.connector > svg {
+.svg.connector > svg {
   width: 109%;
   height: 109%;
   margin-left: -2%;
 }
-.decoration path,
-.decoration ellipse,
-.decoration rect,
-.decoration polygon,
-.decoration circle {
+.svg path,
+.svg ellipse,
+.svg rect,
+.svg polygon,
+.svg circle {
   fill: currentColor;
 }
-.decoration mpath,
-.decoration line,
-.decoration polyline {
+.svg mpath,
+.svg line,
+.svg polyline {
   stroke: currentColor;
 }
-.svg.decoration {
+.svg {
   background-color: transparent;
+}
+.revealed .play.svg:after {
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -20px;
+  background-color: currentColor;
+  content: "";
 }
 .colors-style-aside-border .publisher,
 .colors-style-aside-border .author {
@@ -318,8 +353,11 @@ h3 a {
 .decoration {
   z-index: 3;
 }
-.heading ul {
+.panel ul {
   list-style-type: none !important;
+}
+ul {
+  list-style-position: inside;
 }
 .panel .heading {
   text-transform: uppercase;
@@ -413,22 +451,22 @@ h3 a {
 .layout-system { margin: 0px auto; position: relative; }
 #page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f#page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f{width: 4.804rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one{position: relative; display: block; width: 4.804rem; height: 0.474rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{position: fixed; z-index: 100; font-size: 0.164rem; line-height: 0.204rem; height: 0.474rem; width: 4.804rem; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one{position: relative; display: block; width: 4.804rem; height: 0.554rem; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{position: fixed; z-index: 100; font-size: 0.164rem; line-height: 0.204rem; height: 0.554rem; width: 4.804rem; top: 0rem; left: 0rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing >.data.list li { display: block; margin: auto; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 3.954rem; position: absolute; top: 0.064rem; left: 0.434rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{max-width: 4.324rem; font-size: 0.244rem; line-height: 0.324rem; position: absolute; top: 0rem; left: 0.134rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{position: fixed; font-size: 0.164rem; line-height: 0.244rem; height: 7.204rem; width: 3.844rem; top: 0rem; left: -3.844rem; min-height: 43.524rem; z-index: -1; -webkit-transform: translateX(0rem);}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{text-align: center; font-size: 0.164rem; line-height: 0.244rem; width: 3.604rem; position: absolute; top: 1.704rem; left: 0.124rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(1){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(2){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(3){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(4){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing>div:nth-of-type(1){position: absolute; left: 100%; top: 0rem; background-image: linear-gradient(to right, rgba(41, 35, 35, 0.701961), rgba(41, 35, 35, 0)); width: 1.444rem; height: 43.524rem; opacity: 0;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile{height: 0.164rem; width: 0.244rem; position: absolute; left: 0.144rem; top: 0.144rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: left; }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: left; }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 4.224rem; position: absolute; top: 0.124rem; left: 0.504rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 3.984rem; position: absolute; top: 0rem; left: 0.124rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{position: fixed; font-size: 0.164rem; line-height: 0.244rem; height: 7.204rem; width: 4.084rem; top: 0rem; left: -4.084rem; min-height: 44.944rem; z-index: -1; -webkit-transform: translateX(0rem);}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{font-size: 0.164rem; line-height: 0.244rem; width: 3.364rem; position: absolute; top: 0.964rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(1){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(2){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(3){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(4){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing>div:nth-of-type(1){position: absolute; left: 100%; top: 0rem; background-image: linear-gradient(to right, rgba(41, 35, 35, 0.701961), rgba(41, 35, 35, 0)); width: 1.084rem; height: 44.944rem; opacity: 0;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile{height: 0.164rem; width: 0.244rem; position: absolute; top: 0.204rem; left: 0.224rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.listing > .data.list { color: rgb(255, 240, 229); }
@@ -442,14 +480,14 @@ h3 a {
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav { background-color: rgb(41, 35, 35); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one{position: relative; display: block; width: 4.804rem; height: 2.464rem; top: 0rem; left: 0rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 2.224rem; width: 4.324rem; position: absolute; top: 0.714rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one{position: relative; display: block; width: 4.804rem; height: 43.424rem; top: 0rem; left: 0rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 3.564rem; width: 4.324rem; position: absolute; top: 0.554rem; left: 0.244rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0:before{}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 >.group.textual { text-align: left; }
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 2.224rem; width: 4.084rem; position: absolute; top: 0rem; left: 0.124rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.364rem; line-height: 0.474rem; width: 3.844rem; position: absolute; top: 0rem; left: 0.124rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 3.844rem; position: absolute; top: 1.244rem; left: 0.124rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile{height: 0.204rem; width: 0.204rem; position: absolute; top: 0.994rem; left: 0.124rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 3.324rem; width: 4.084rem; position: absolute; top: 0.244rem; left: 0.124rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.524rem; line-height: 0.684rem; width: 3.844rem; position: absolute; top: 0rem; left: 0.124rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 3.844rem; position: absolute; top: 2.344rem; left: 0.124rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile{height: 0.204rem; width: 0.204rem; position: absolute; top: 2.094rem; left: 0.124rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline { color: rgb(255, 224, 204); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .text.paragraph { color: rgb(255, 240, 229); }
@@ -460,9 +498,7 @@ h3 a {
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:hover { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:active { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one { background-color: rgb(28, 24, 24); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2{position: relative; display: block; width: 4.804rem; height: 39.624rem; top: 0rem; left: 0rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 39.144rem; width: 4.324rem; position: absolute; top: 2.9299999999999997rem; left: 0.244rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 39.384rem; width: 4.324rem; position: absolute; top: 4.114rem; left: 0.244rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0:before{}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0 >.group.column { text-align: left; }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.164rem; line-height: 0.244rem; height: 39.144rem; width: 4.084rem; position: absolute; top: 0rem; left: 0.124rem;}
@@ -474,14 +510,14 @@ h3 a {
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:hover { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:active { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2 { background-color: rgb(28, 24, 24); }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3{position: relative;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3-l-one{position: relative; display: block; width: 4.804rem; height: 0.974rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.494rem; width: 4.324rem; position: absolute; top: 42.794rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.494rem; width: 4.324rem; position: absolute; top: 44.214rem; left: 0.244rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 4.324rem; position: absolute; top: 0.094rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 4.084rem; position: absolute; top: 0rem; left: 0.124rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 4.084rem; position: absolute; top: 0.094rem; left: 0.124rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 3.844rem; position: absolute; top: 0rem; left: 0.124rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate a { color: rgb(255, 157, 92); }
@@ -508,22 +544,22 @@ display: none;
 .layout-system { margin: 0px auto; position: relative; }
 #page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f#page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f{width: 7.204rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one{position: relative; display: block; width: 7.204rem; height: 0.594rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{position: fixed; z-index: 100; font-size: 0.164rem; line-height: 0.204rem; height: 0.594rem; width: 7.204rem; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one{position: relative; display: block; width: 7.204rem; height: 0.664rem; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{position: fixed; z-index: 100; font-size: 0.164rem; line-height: 0.204rem; height: 0.664rem; width: 7.204rem; top: 0rem; left: 0rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing >.data.list li { display: block; margin: auto; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.334rem; width: 6.164rem; position: absolute; top: 0.134rem; left: 0.534rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{max-width: 6.484rem; font-size: 0.244rem; line-height: 0.324rem; position: absolute; top: 0rem; left: 0.194rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{position: fixed; font-size: 0.164rem; line-height: 0.244rem; height: 4.804rem; width: 5.764rem; top: 0rem; left: -5.764rem; min-height: 43.524rem; z-index: -1; -webkit-transform: translateX(0rem);}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{text-align: center; font-size: 0.164rem; line-height: 0.244rem; width: 5.404rem; position: absolute; top: 0.864rem; left: 0.184rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(1){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(2){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(3){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(4){padding: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing>div:nth-of-type(1){position: absolute; left: 100%; top: 0rem; background-image: linear-gradient(to right, rgba(41, 35, 35, 0.701961), rgba(41, 35, 35, 0)); width: 1.444rem; height: 43.524rem; opacity: 0;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile{height: 0.164rem; width: 0.244rem; position: absolute; left: 0.214rem; top: 0.214rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: left; }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: left; }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 6.564rem; position: absolute; top: 0.174rem; left: 0.534rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 6.204rem; position: absolute; top: 0rem; left: 0.184rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{position: fixed; font-size: 0.164rem; line-height: 0.244rem; height: 4.804rem; width: 6.124rem; top: 0rem; left: -6.124rem; min-height: 44.944rem; z-index: -1; -webkit-transform: translateX(0rem);}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{font-size: 0.164rem; line-height: 0.244rem; width: 5.044rem; position: absolute; top: 1.444rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(1){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(2){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(3){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list>li:nth-of-type(4){padding-top: 0.164rem; padding-bottom: 0.164rem; font-size: 0.244rem; line-height: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing>div:nth-of-type(1){position: absolute; left: 100%; top: 0rem; background-image: linear-gradient(to right, rgba(41, 35, 35, 0.701961), rgba(41, 35, 35, 0)); width: 1.084rem; height: 44.944rem; opacity: 0;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile{height: 0.164rem; width: 0.244rem; position: absolute; top: 0.254rem; left: 0.224rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.listing > .data.list { color: rgb(255, 240, 229); }
@@ -537,14 +573,14 @@ display: none;
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav { background-color: rgb(41, 35, 35); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one{position: relative; display: block; width: 7.204rem; height: 1.784rem; top: 0rem; left: 0rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 1.424rem; width: 6.484rem; position: absolute; top: 0.954rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one{position: relative; display: block; width: 7.204rem; height: 29.214rem; top: 0rem; left: 0rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 2.674rem; width: 6.484rem; position: absolute; top: 0.664rem; left: 0.364rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0:before{}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 >.group.textual { text-align: left; }
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 1.424rem; width: 6.124rem; position: absolute; top: 0rem; left: 0.184rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.364rem; line-height: 0.474rem; width: 5.764rem; position: absolute; top: 0rem; left: 0.184rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 5.764rem; position: absolute; top: 0.924rem; left: 0.184rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile{height: 0.304rem; width: 0.304rem; position: absolute; top: 0.554rem; left: 0.184rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 2.314rem; width: 6.124rem; position: absolute; top: 0.364rem; left: 0.184rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.524rem; line-height: 0.684rem; width: 5.764rem; position: absolute; top: 0rem; left: 0.184rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 5.764rem; position: absolute; top: 1.814rem; left: 0.184rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile{height: 0.304rem; width: 0.304rem; position: absolute; top: 1.444rem; left: 0.184rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline { color: rgb(255, 224, 204); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .text.paragraph { color: rgb(255, 240, 229); }
@@ -555,9 +591,7 @@ display: none;
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:hover { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:active { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one { background-color: rgb(28, 24, 24); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2{position: relative; display: block; width: 7.204rem; height: 26.184rem; top: 0rem; left: 0rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 25.464rem; width: 6.484rem; position: absolute; top: 2.374rem; left: 0.364rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 25.824rem; width: 6.484rem; position: absolute; top: 3.334rem; left: 0.364rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0:before{}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0 >.group.column { text-align: left; }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.164rem; line-height: 0.244rem; height: 25.464rem; width: 6.124rem; position: absolute; top: 0rem; left: 0.184rem;}
@@ -569,14 +603,14 @@ display: none;
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:hover { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:active { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2 { background-color: rgb(28, 24, 24); }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3{position: relative;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3-l-one{position: relative; display: block; width: 7.204rem; height: 1.304rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.584rem; width: 6.484rem; position: absolute; top: 28.914rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.584rem; width: 6.484rem; position: absolute; top: 30.234rem; left: 0.364rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 6.484rem; position: absolute; top: 0.134rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 6.124rem; position: absolute; top: 0rem; left: 0.184rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 6.124rem; position: absolute; top: 0.134rem; left: 0.184rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 5.764rem; position: absolute; top: 0rem; left: 0.184rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate a { color: rgb(255, 157, 92); }
@@ -603,16 +637,16 @@ display: none;
 .layout-system { margin: 0px auto; position: relative; }
 #page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f#page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f{width: 9.604rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one{position: relative; display: block; width: 9.604rem; height: 1.404rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{font-size: 0.164rem; line-height: 0.204rem; height: 1.404rem; width: 9.604rem; position: absolute; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one{position: relative; display: block; width: 9.604rem; height: 1.644rem; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{font-size: 0.164rem; line-height: 0.204rem; height: 1.644rem; width: 9.604rem; position: absolute; top: 0rem; left: 0rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing >.data.list li { padding-left: 1em; padding-right: 1em; display: inline-block; white-space: nowrap; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: center; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 9.604rem; position: absolute; top: 0.174rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 9.124rem; position: absolute; top: 0rem; left: 0.244rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.164rem; line-height: 0.244rem; height: 0.584rem; width: 9.604rem; position: absolute; top: 0.654rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{text-align: center; border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.164rem; padding-top: 0.084rem; margin-top: 0.084rem; line-height: 0.244rem; width: 9.124rem; position: absolute; top: 0rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 9.124rem; position: absolute; top: 0.174rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 8.644rem; position: absolute; top: 0rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.164rem; line-height: 0.244rem; height: 0.824rem; width: 9.124rem; position: absolute; top: 0.654rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.164rem; padding-top: 0.084rem; margin-top: 0.084rem; line-height: 0.244rem; width: 8.644rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.listing > .data.list { color: rgb(255, 240, 229); }
@@ -624,14 +658,14 @@ display: none;
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav { background-color: rgb(41, 35, 35); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one{position: relative; display: block; width: 9.604rem; height: 2.564rem; top: 0rem; left: 0rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 2.084rem; width: 8.644rem; position: absolute; top: 1.884rem; left: 0.484rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one{position: relative; display: block; width: 9.604rem; height: 44.604rem; top: 0rem; left: 0rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 4.024rem; width: 8.644rem; position: absolute; top: 1.644rem; left: 0.484rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0:before{}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 >.group.textual { text-align: left; }
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 2.084rem; width: 4.804rem; position: absolute; top: 0rem; left: 1.924rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.364rem; line-height: 0.474rem; width: 4.324rem; position: absolute; top: 0rem; left: 0.244rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 4.324rem; position: absolute; top: 1.344rem; left: 0.244rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop{height: 0.204rem; width: 0.204rem; position: absolute; top: 1.044rem; left: 0.244rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 3.544rem; width: 6.724rem; position: absolute; top: 0.484rem; left: 0.964rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.524rem; line-height: 0.684rem; width: 3.844rem; position: absolute; top: 0.064rem; left: 1.444rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 3.844rem; position: absolute; top: 2.504rem; left: 1.444rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop{height: 0.204rem; width: 0.204rem; position: absolute; top: 2.204rem; left: 1.444rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline { color: rgb(255, 224, 204); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .text.paragraph { color: rgb(255, 240, 229); }
@@ -642,13 +676,11 @@ display: none;
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:hover { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:active { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one { background-color: rgb(28, 24, 24); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2{position: relative; display: block; width: 9.604rem; height: 35.304rem; top: 0rem; left: 0rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 34.344rem; width: 8.644rem; position: absolute; top: 3.964rem; left: 0.484rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 39.624rem; width: 8.644rem; position: absolute; top: 5.659999999999999rem; left: 0.484rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0:before{}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0 >.group.column { text-align: left; }
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.164rem; line-height: 0.244rem; height: 34.344rem; width: 8.164rem; position: absolute; top: 0rem; left: 0.244rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 4.324rem; position: absolute; top: 0rem; left: 1.924rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.164rem; line-height: 0.244rem; height: 39.144rem; width: 6.724rem; position: absolute; top: 0rem; left: 0.964rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 3.844rem; position: absolute; top: 0rem; left: 1.444rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph { color: rgb(255, 240, 229); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a { color: rgb(180, 119, 79); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a:hover { color: rgb(122, 112, 108); }
@@ -656,14 +688,14 @@ display: none;
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:hover { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:active { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2 { background-color: rgb(28, 24, 24); }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3{position: relative;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3-l-one{position: relative; display: block; width: 9.604rem; height: 1.624rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.664rem; width: 8.644rem; position: absolute; top: 39.739999999999995rem; left: 0.484rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.664rem; width: 8.644rem; position: absolute; top: 46.724rem; left: 0.484rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 8.644rem; position: absolute; top: 0.174rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 8.164rem; position: absolute; top: 0rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 8.164rem; position: absolute; top: 0.174rem; left: 0.244rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 7.684rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate a { color: rgb(255, 157, 92); }
@@ -691,16 +723,16 @@ display: none;
 .layout-system { margin: 0px auto; position: relative; }
 #page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f#page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f{width: 14.404rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one{position: relative; display: block; width: 14.404rem; height: 1.334rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{font-size: 0.164rem; line-height: 0.204rem; height: 1.334rem; width: 14.404rem; position: absolute; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one{position: relative; display: block; width: 14.404rem; height: 1.574rem; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{font-size: 0.164rem; line-height: 0.204rem; height: 1.574rem; width: 14.404rem; position: absolute; top: 0rem; left: 0rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing >.data.list li { padding-left: 1em; padding-right: 1em; display: inline-block; white-space: nowrap; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: center; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 14.404rem; position: absolute; top: 0.264rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 13.684rem; position: absolute; top: 0rem; left: 0.364rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.164rem; line-height: 0.244rem; height: 0.344rem; width: 14.404rem; position: absolute; top: 0.744rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{text-align: center; border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.164rem; padding-top: 0.084rem; margin-top: 0.084rem; line-height: 0.244rem; width: 13.684rem; position: absolute; top: 0rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 13.684rem; position: absolute; top: 0.264rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 12.964rem; position: absolute; top: 0rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.164rem; line-height: 0.244rem; height: 0.584rem; width: 13.684rem; position: absolute; top: 0.744rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.164rem; padding-top: 0.084rem; margin-top: 0.084rem; line-height: 0.244rem; width: 12.964rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.listing > .data.list { color: rgb(255, 240, 229); }
@@ -712,14 +744,14 @@ display: none;
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav { background-color: rgb(41, 35, 35); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one{position: relative; display: block; width: 14.404rem; height: 2.284rem; top: 0rem; left: 0rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 1.564rem; width: 12.964rem; position: absolute; top: 2.054rem; left: 0.724rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one{position: relative; display: block; width: 14.404rem; height: 30.974rem; top: 0rem; left: 0rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.164rem; line-height: 0.204rem; height: 3.354rem; width: 12.964rem; position: absolute; top: 1.574rem; left: 0.724rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0:before{}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 >.group.textual { text-align: left; }
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 1.564rem; width: 7.204rem; position: absolute; top: 0rem; left: 2.884rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.364rem; line-height: 0.474rem; width: 6.484rem; position: absolute; top: 0rem; left: 0.364rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 6.484rem; position: absolute; top: 1.064rem; left: 0.364rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop{height: 0.304rem; width: 0.304rem; position: absolute; top: 0.624rem; left: 0.364rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.164rem; line-height: 0.244rem; height: 2.634rem; width: 10.084rem; position: absolute; top: 0.724rem; left: 1.444rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.524rem; line-height: 0.684rem; width: 5.764rem; position: absolute; top: 0.094rem; left: 2.164rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 5.764rem; position: absolute; top: 2.044rem; left: 2.164rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop{height: 0.304rem; width: 0.304rem; position: absolute; top: 1.604rem; left: 2.164rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline { color: rgb(255, 224, 204); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .text.paragraph { color: rgb(255, 240, 229); }
@@ -730,13 +762,11 @@ display: none;
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:hover { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:active { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one { background-color: rgb(28, 24, 24); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2{position: relative; display: block; width: 14.404rem; height: 23.784rem; top: 0rem; left: 0rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 22.344rem; width: 12.964rem; position: absolute; top: 3.614rem; left: 0.724rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.164rem; line-height: 0.204rem; height: 26.184rem; width: 12.964rem; position: absolute; top: 4.924rem; left: 0.724rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0:before{}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0 >.group.column { text-align: left; }
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.164rem; line-height: 0.244rem; height: 22.344rem; width: 12.244rem; position: absolute; top: 0rem; left: 0.364rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 6.484rem; position: absolute; top: 0rem; left: 2.884rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.164rem; line-height: 0.244rem; height: 25.464rem; width: 10.084rem; position: absolute; top: 0rem; left: 1.444rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.164rem; line-height: 0.244rem; width: 5.764rem; position: absolute; top: 0rem; left: 2.164rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph { color: rgb(255, 240, 229); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a { color: rgb(180, 119, 79); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a:hover { color: rgb(122, 112, 108); }
@@ -744,14 +774,14 @@ display: none;
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:hover { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:active { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2 { background-color: rgb(28, 24, 24); }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3{position: relative;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3-l-one{position: relative; display: block; width: 14.404rem; height: 2.274rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.834rem; width: 12.964rem; position: absolute; top: 28.114rem; left: 0.724rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.164rem; line-height: 0.204rem; height: 0.834rem; width: 12.964rem; position: absolute; top: 33.264rem; left: 0.724rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 12.964rem; position: absolute; top: 0.264rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 12.244rem; position: absolute; top: 0rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.164rem; line-height: 0.244rem; height: 0.324rem; width: 12.244rem; position: absolute; top: 0.264rem; left: 0.364rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 11.524rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate a { color: rgb(255, 157, 92); }
@@ -779,16 +809,16 @@ display: none;
 .layout-system { margin: 0px auto; position: relative; }
 #page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f#page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f{width: 17.994rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one{position: relative; display: block; width: 17.994rem; height: 1.644rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{font-size: 0.204rem; line-height: 0.254rem; height: 1.644rem; width: 17.994rem; position: absolute; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one{position: relative; display: block; width: 17.994rem; height: 1.944rem; top: 0rem; left: 0rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav{font-size: 0.204rem; line-height: 0.254rem; height: 1.944rem; width: 17.994rem; position: absolute; top: 0rem; left: 0rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing >.data.list li { padding-left: 1em; padding-right: 1em; display: inline-block; white-space: nowrap; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: center; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.204rem; line-height: 0.304rem; height: 0.394rem; width: 17.994rem; position: absolute; top: 0.324rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 17.104rem; position: absolute; top: 0rem; left: 0.454rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.204rem; line-height: 0.304rem; height: 0.424rem; width: 17.994rem; position: absolute; top: 0.914rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{text-align: center; border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.204rem; padding-top: 0.104rem; margin-top: 0.104rem; line-height: 0.304rem; width: 17.104rem; position: absolute; top: 0rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.204rem; line-height: 0.304rem; height: 0.394rem; width: 17.104rem; position: absolute; top: 0.324rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.204rem; line-height: 0.304rem; height: 0.724rem; width: 17.104rem; position: absolute; top: 0.914rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.204rem; padding-top: 0.104rem; margin-top: 0.104rem; line-height: 0.304rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.listing > .data.list { color: rgb(255, 240, 229); }
@@ -800,14 +830,14 @@ display: none;
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav { background-color: rgb(41, 35, 35); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one{position: relative; display: block; width: 17.994rem; height: 2.854rem; top: 0rem; left: 0rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.204rem; line-height: 0.254rem; height: 1.954rem; width: 16.204rem; position: absolute; top: 2.544rem; left: 0.904rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one{position: relative; display: block; width: 17.994rem; height: 38.704rem; top: 0rem; left: 0rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.204rem; line-height: 0.254rem; height: 4.184rem; width: 16.204rem; position: absolute; top: 1.944rem; left: 0.904rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0:before{}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 >.group.textual { text-align: left; }
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.204rem; line-height: 0.304rem; height: 1.954rem; width: 9rem; position: absolute; top: 0rem; left: 3.604rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.454rem; line-height: 0.594rem; width: 8.104rem; position: absolute; top: 0rem; left: 0.454rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.204rem; line-height: 0.304rem; width: 8.104rem; position: absolute; top: 1.334rem; left: 0.454rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema{height: 0.384rem; width: 0.384rem; position: absolute; top: 0.774rem; left: 0.454rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.204rem; line-height: 0.304rem; height: 3.284rem; width: 12.604rem; position: absolute; top: 0.904rem; left: 1.804rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.654rem; line-height: 0.854rem; width: 7.204rem; position: absolute; top: 0.124rem; left: 2.704rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.204rem; line-height: 0.304rem; width: 7.204rem; position: absolute; top: 2.554rem; left: 2.704rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema{height: 0.384rem; width: 0.384rem; position: absolute; top: 2rem; left: 2.704rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline { color: rgb(255, 224, 204); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .text.paragraph { color: rgb(255, 240, 229); }
@@ -818,13 +848,11 @@ display: none;
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:hover { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:active { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one { background-color: rgb(28, 24, 24); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2{position: relative; display: block; width: 17.994rem; height: 29.724rem; top: 0rem; left: 0rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.204rem; line-height: 0.254rem; height: 27.924rem; width: 16.204rem; position: absolute; top: 4.494rem; left: 0.904rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.204rem; line-height: 0.254rem; height: 32.724rem; width: 16.204rem; position: absolute; top: 6.119999999999999rem; left: 0.904rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0:before{}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0 >.group.column { text-align: left; }
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.204rem; line-height: 0.304rem; height: 27.924rem; width: 15.304rem; position: absolute; top: 0rem; left: 0.454rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.204rem; line-height: 0.304rem; width: 8.104rem; position: absolute; top: 0rem; left: 3.604rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.204rem; line-height: 0.304rem; height: 31.824rem; width: 12.604rem; position: absolute; top: 0rem; left: 1.804rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.204rem; line-height: 0.304rem; width: 7.204rem; position: absolute; top: 0rem; left: 2.704rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph { color: rgb(255, 240, 229); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a { color: rgb(180, 119, 79); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a:hover { color: rgb(122, 112, 108); }
@@ -832,14 +860,14 @@ display: none;
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:hover { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:active { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2 { background-color: rgb(28, 24, 24); }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3{position: relative;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3-l-one{position: relative; display: block; width: 17.994rem; height: 2.824rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.204rem; line-height: 0.254rem; height: 1.024rem; width: 16.204rem; position: absolute; top: 35.114rem; left: 0.904rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.204rem; line-height: 0.254rem; height: 1.024rem; width: 16.204rem; position: absolute; top: 41.544rem; left: 0.904rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.204rem; line-height: 0.304rem; height: 0.394rem; width: 16.204rem; position: absolute; top: 0.324rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 15.304rem; position: absolute; top: 0rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.204rem; line-height: 0.304rem; height: 0.394rem; width: 15.304rem; position: absolute; top: 0.324rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 14.404rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate a { color: rgb(255, 157, 92); }
@@ -873,10 +901,10 @@ display: none;
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing >.data.list li { padding-left: 1em; padding-right: 1em; display: inline-block; white-space: nowrap; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.heading { text-align: center; }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav >.group.listing { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.154rem; line-height: 0.234rem; height: 0.304rem; width: 18rem; position: absolute; top: 0.324rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 17.104rem; position: absolute; top: 0rem; left: 0.454rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.154rem; line-height: 0.234rem; height: 0.334rem; width: 18rem; position: absolute; top: 0.774rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{text-align: center; border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.154rem; padding-top: 0.084rem; margin-top: 0.084rem; line-height: 0.234rem; width: 17.104rem; position: absolute; top: 0rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading{font-size: 0.154rem; line-height: 0.234rem; height: 0.304rem; width: 17.114rem; position: absolute; top: 0.324rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing{font-size: 0.154rem; line-height: 0.234rem; height: 0.334rem; width: 17.114rem; position: absolute; top: 0.774rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list{border-top-width: 0.024rem; border-top-style: solid; border-top-color: rgba(150, 150, 150, 0.298039); font-size: 0.154rem; padding-top: 0.084rem; margin-top: 0.084rem; line-height: 0.234rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav .group.listing > .data.list { color: rgb(255, 240, 229); }
@@ -888,14 +916,14 @@ display: none;
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav { background-color: rgb(41, 35, 35); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2{position: relative;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one{position: relative; display: block; width: 18rem; height: 2.564rem; top: 0rem; left: 0rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.154rem; line-height: 0.194rem; height: 1.664rem; width: 16.204rem; position: absolute; top: 2.324rem; left: 0.904rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one{position: relative; display: block; width: 18rem; height: 25.034rem; top: 0rem; left: 0rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0{font-size: 0.154rem; line-height: 0.194rem; height: 2.994rem; width: 16.204rem; position: absolute; top: 1.424rem; left: 0.904rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0:before{}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 >.group.textual { text-align: left; }
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.154rem; line-height: 0.234rem; height: 1.664rem; width: 9rem; position: absolute; top: 0rem; left: 3.614rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.344rem; line-height: 0.444rem; width: 8.104rem; position: absolute; top: 0rem; left: 0.454rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.154rem; line-height: 0.234rem; width: 8.104rem; position: absolute; top: 1.184rem; left: 0.454rem;}
-#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema{height: 0.384rem; width: 0.384rem; position: absolute; top: 0.624rem; left: 0.454rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual{opacity: 1; font-size: 0.154rem; line-height: 0.234rem; height: 2.094rem; width: 12.604rem; position: absolute; top: 0.904rem; left: 1.804rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline{font-size: 0.494rem; line-height: 0.644rem; width: 7.204rem; position: absolute; top: 0.124rem; left: 2.704rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph{font-size: 0.154rem; line-height: 0.234rem; width: 7.204rem; position: absolute; top: 1.494rem; left: 2.704rem;}
+#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-cinema{height: 0.384rem; width: 0.384rem; position: absolute; top: 0.944rem; left: 2.704rem;}
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline { color: rgb(255, 224, 204); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 .group.textual > .text.paragraph { color: rgb(255, 240, 229); }
@@ -906,13 +934,11 @@ display: none;
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:hover { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 a:active { color: rgb(0, 0, 0); }
 #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0#u-21190724-3b5d-4d9a-b262-3c2fed4cadc0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one { background-color: rgb(28, 24, 24); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2{position: relative; display: block; width: 18rem; height: 19.084rem; top: 0rem; left: 0rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.154rem; line-height: 0.194rem; height: 17.274rem; width: 16.204rem; position: absolute; top: 3.984rem; left: 0.904rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0{font-size: 0.154rem; line-height: 0.194rem; height: 20.254rem; width: 16.204rem; position: absolute; top: 4.414rem; left: 0.904rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0:before{}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0 >.group.column { text-align: left; }
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.154rem; line-height: 0.234rem; height: 17.274rem; width: 15.304rem; position: absolute; top: 0rem; left: 0.454rem;}
-#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.154rem; line-height: 0.234rem; width: 8.104rem; position: absolute; top: 0rem; left: 3.604rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column{font-size: 0.154rem; line-height: 0.234rem; height: 19.344rem; width: 12.604rem; position: absolute; top: 0rem; left: 1.804rem;}
+#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph#u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph{font-size: 0.154rem; line-height: 0.234rem; width: 7.204rem; position: absolute; top: 0rem; left: 2.704rem;}
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph { color: rgb(255, 240, 229); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a { color: rgb(180, 119, 79); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 .group.column > .text.paragraph a:hover { color: rgb(122, 112, 108); }
@@ -920,14 +946,14 @@ display: none;
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:hover { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 a:active { color: rgb(0, 0, 0); }
 #u-b3eb529f-90c0-4056-9dbe-ea43716940f0#u-b3eb529f-90c0-4056-9dbe-ea43716940f0 { background-color: rgb(41, 35, 35); }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2 { background-color: rgb(28, 24, 24); }
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one { background-color: rgb(28, 24, 24); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3{position: relative;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3-l-one#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3-l-one{position: relative; display: block; width: 18rem; height: 2.734rem; top: 0rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.154rem; line-height: 0.194rem; height: 0.934rem; width: 16.204rem; position: absolute; top: 23.959999999999997rem; left: 0.904rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate{font-size: 0.154rem; line-height: 0.194rem; height: 0.934rem; width: 16.204rem; position: absolute; top: 27.354rem; left: 0.904rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate:before{}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate >.group.heading { text-align: center; }
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.154rem; line-height: 0.234rem; height: 0.304rem; width: 16.204rem; position: absolute; top: 0.324rem; left: 0rem;}
-#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 15.314rem; position: absolute; top: 0rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading{font-size: 0.154rem; line-height: 0.234rem; height: 0.304rem; width: 15.314rem; position: absolute; top: 0.324rem; left: 0.454rem;}
+#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 14.404rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline { color: rgb(255, 224, 204); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate .group.heading > .title.headline a:hover { color: rgb(255, 203, 168); }
 #u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate#u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate a { color: rgb(255, 157, 92); }
@@ -950,7 +976,7 @@ wbr.w1800{ display: block }
  #u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title w_list w_data w_short_list w_short_data layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_paragraph w_short_text w_long_paragraph w_long_text layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles w_texts w_separators colors-use-same-as-previous layout one i first_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i last_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one-2"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3-l-one"></div><style id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-color">body{background-color: rgba(32, 26, 21, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks vertical line_padding_aside_inside text_width_full not_decorated group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_none stack_h_align_center uninverted collapsed full panel stack heading_listing i first_panel last_panel heading listing w_decoration w_headline w_title w_short_headline w_short_title w_list w_data w_short_list w_short_data stack heading_listing" itemid="u-page-nav" itemtype="nav" diff_index="4" index="heading_listing" kind="stack" score="2.625" missed="0.375" tag="article" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav"><div kind="group" index="heading" class="group heading group heading" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" itemprop="title" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline-a">vandal.cleaning</a></h1></div><div kind="group" index="listing" class="group listing group listing" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing"><ul kind="data" index="list" class="short short_list short_data data list vfld-leader vfld-trailer data list" specificity="0.25" itemprop="list" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list"><li><a href='../art-crimes-september-11-murals/'>Art Crimes: September 11 <wbr class="w480"></wbr>Murals</a></li><li><a href='../streetart-outdoor-ooh-vandalcleaning-instagram-photo/'><wbr class="w480 w481"></wbr>#streetart #outdoor #ooh <wbr class="w480"></wbr>(@vandalcleaning) <wbr class="w481"></wbr>* <wbr class="w480"></wbr>Instagram photos and videos</a></li><li><a href='../graffiti-dictionary-149st/'><wbr class="w480 w481 w960"></wbr>Graffiti Dictionary @149st</a></li><li><a href='../a-graffiti-glossary/'><wbr class="w480 w481"></wbr>A Graffiti Glossary</a></li></ul></div><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+}</style></head><body><div class="layout-system rust mobile" id="page-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title w_list w_data w_short_list w_short_data layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_paragraph w_short_text w_long_paragraph w_long_text layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-mobile-l-one-3-l-one"></div><style id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-color">body{background-color: rgba(32, 26, 21, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks vertical line_padding_aside_inside text_width_full not_decorated group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted collapsed full panel stack heading_listing i first_panel last_panel heading listing w_decoration w_headline w_title w_short_headline w_short_title w_list w_data w_short_list w_short_data stack heading_listing" itemid="u-page-nav" itemtype="nav" diff_index="4" index="heading_listing" kind="stack" score="2.75" missed="0.25" tag="article" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav"><div kind="group" index="heading" class="group heading group heading" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-heading-t-headline-a">vandal.cleaning</a></h1></div><div kind="group" index="listing" class="group listing group listing" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing"><ul kind="data" index="list" class="short short_list short_data data list vfld-leader vfld-trailer data list" specificity="0.25" itemprop="list" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-g-listing-d-list"><li><a href='../art-crimes-september-11-murals/'>Art Crimes: September 11 <wbr class="w480"></wbr>Murals</a></li><li><a href='../streetart-outdoor-ooh-vandalcleaning-instagram-photo/'><wbr class="w480 w481 w960"></wbr>#streetart #outdoor #ooh <wbr class="w480"></wbr>(@vandalcleaning) <wbr class="w481"></wbr>* <wbr class="w480"></wbr>Instagram photos and videos</a></li><li><a href='../graffiti-dictionary-149st/'><wbr class="w480 w481"></wbr>Graffiti Dictionary @149st</a></li><li><a href='../a-graffiti-glossary/'><wbr class="w480 w481 w960 w961 w1799"></wbr>A Graffiti Glossary</a></li></ul></div><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg preserveAspectRatio="none" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-nav-d-icon-mobile-svg" width="72px" height="60px" viewBox="0 0 72 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     
     <title>Rectangle 1 + Rectangle 1 Copy + Rectangle 1 Copy 2</title>
@@ -965,7 +991,7 @@ display: none;
             </g>
         </g>
     </g>
-</svg></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack textual i first_chapter w_headline w_title w_paragraph w_text w_separator w_decoration w_short_headline w_short_title w_short_paragraph w_short_text stack textual" itemid="21190724-3b5d-4d9a-b262-3c2fed4cadc0" itemtype="text" diff_index="4" index="textual" kind="stack" score="5.625" missed="0.375" tag="article" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0"><div kind="group" index="textual" class="group textual group textual" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline"><span class="text-decoration" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline-span">Graffiti Dictionary <wbr class="w480 w960"></wbr>@149st</span></h1><div kind="decoration" index="separator" class="decoration separator decoration separator svg" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop"><?xml version="1.0" encoding="utf-8"?>
+</svg></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack textual i first_chapter w_headline w_title w_paragraph w_text w_separator w_decoration w_short_headline w_short_title w_short_paragraph w_short_text stack textual" itemid="21190724-3b5d-4d9a-b262-3c2fed4cadc0" itemtype="text" diff_index="4" index="textual" kind="stack" score="1.625" missed="0.375" tag="article" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0"><div kind="group" index="textual" class="group textual group textual" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline"><span class="text-decoration" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-headline-span">Graffiti <wbr class="w480 w960"></wbr>Dictionary <wbr class="w480 w481 w960 w961 w1799"></wbr>@149st</span></h1><div kind="decoration" index="separator" class="decoration separator decoration separator svg" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop"><?xml version="1.0" encoding="utf-8"?>
 
 <svg preserveAspectRatio="none" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-desktop-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve">
@@ -977,13 +1003,13 @@ display: none;
 	 viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve">
 <path fill="#808285" d="M36,2.3L0.3,64.7h71.4L36,2.3z M36,8.3l30.6,53.4H5.4L36,8.3z"/>
 </svg>
-</div><div kind="text" index="paragraph" class="text-decoration short short_paragraph short_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph"><p><span class="first-letter">W</span>RITER'S VOCABULARYThe following is provided <wbr class="w480"></wbr>primarily <wbr class="w960"></wbr>for the use of <wbr class="w481"></wbr>people <wbr class="w961 w1799"></wbr>outside the <wbr class="w480"></wbr>writing <wbr class="w1800"></wbr>community. <wbr class="w960"></wbr>We hope it clarifies site <wbr class="w480"></wbr>content.</p></div><div kind="decoration" index="separator" class="decoration separator decoration separator svg" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile"><?xml version="1.0" encoding="utf-8"?>
+</div><div kind="text" index="paragraph" class="text-decoration short short_paragraph short_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-t-paragraph"><p><span class="first-letter">W</span>RITER'S VOCABULARYThe following is provided <wbr class="w480 w960"></wbr>primarily for the use of <wbr class="w481 w961 w1799"></wbr>people outside the <wbr class="w480 w960 w1800"></wbr>writing community. We hope it clarifies site <wbr class="w480 w960"></wbr>content.</p></div><div kind="decoration" index="separator" class="decoration separator decoration separator svg" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile"><?xml version="1.0" encoding="utf-8"?>
 
 <svg preserveAspectRatio="none" id="u-21190724-3b5d-4d9a-b262-3c2fed4cadc0-g-textual-d-separator-mobile-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve">
 <path fill="#808285" d="M36,2.3L0.3,64.7h71.4L36,2.3z M36,8.3l30.6,53.4H5.4L36,8.3z"/>
 </svg>
-</div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="b3eb529f-90c0-4056-9dbe-ea43716940f0" itemtype="text" diff_index="1" index="column" kind="stack" score="2.625" missed="0.375" tag="article" id="u-b3eb529f-90c0-4056-9dbe-ea43716940f0"><div kind="group" index="column" class="group column group column" id="u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph"><p><span class="first-letter">A</span>ll-CITY:Railroad freight <a href="cars.FREIGHTS:throw-ups">cars.FREIGHTS:thro..</a> <wbr class="w480"></wbr>done on <wbr class="w960"></wbr>subway car panels <wbr class="w481"></wbr>at <wbr class="w961 w1799"></wbr>window <a href="level.FLOATERS:Rows"><wbr class="w480 w1800"></wbr>level.FLOATERS:Rows</a> of <wbr class="w960"></wbr>throw-ups of the same <a href="name.FAMLIES:Graduation"><wbr class="w480 w481"></wbr>name.FAMLIES:Gradu..</a> of <a href="colors.FADE:Slang"><wbr class="w960 w961 w1799"></wbr>colors.FADE:Slang</a> for <wbr class="w480"></wbr>police. <wbr class="w1800"></wbr>Derived form the <wbr class="w481 w960"></wbr>television series <wbr class="w480"></wbr>Hawaii 5-<a href="O.5-O:Plain">O.5-<wbr class="w961 w1799"></wbr>O:Plain</a> cloths police <wbr class="w960"></wbr>officer or <a href="detective.DT:Part"><wbr class="w480 w481"></wbr>detective.DT:Part</a> of <wbr class="w1800"></wbr>a group or <wbr class="w480 w960 w961 w1799"></wbr>actionDOWN:Excellent, of the highest <a href="order.DOPE:Stainless-steel"><wbr class="w480 w481 w960"></wbr>order.DOPE:Stainle..</a> (R-46)subway car, so <wbr class="w961 w1799"></wbr>named <wbr class="w480"></wbr>for <wbr class="w960 w1800"></wbr>the bell that rings <wbr class="w481"></wbr>alerting passengers of <wbr class="w480"></wbr>closing <wbr class="w960"></wbr>doors.<a href="http://www.at149st.com/images/ding.jpg">DING DONG</a>Don't <wbr class="w961 w1799"></wbr>Get <a href="AroundD.G.A.:Polka"><wbr class="w480 w481"></wbr>AroundD.G.A.:Polka</a> dots, <wbr class="w960 w1800"></wbr>checkers stars swirls <wbr class="w480"></wbr>are placed over the fill-<wbr class="w481"></wbr>in to <wbr class="w960 w961 w1799"></wbr>in hence and <wbr class="w480"></wbr>compliment fill-in . Designs are <wbr class="w1800"></wbr>limited <wbr class="w960"></wbr>only by <wbr class="w480"></wbr>an <wbr class="w481"></wbr>artists <wbr class="w961 w1799"></wbr>imagination and technical <a href="ability.DESIGNS:Excellent"><wbr class="w480 w960"></wbr>ability.DESIGNS:Ex..</a> (derived from <wbr class="w481"></wbr>definite and <wbr class="w480 w960 w961 w1799 w1800"></wbr>death).DEF:To scribble or write on someone <wbr class="w480"></wbr>else's <wbr class="w960"></wbr>name. It <wbr class="w481"></wbr>is considered highly <wbr class="w480 w961 w1799 w1800"></wbr>disrespectful.CROSSING <wbr class="w960"></wbr>OUT:Organized group of <wbr class="w480 w481"></wbr>writersCREW:See image at NYC <wbr class="w960"></wbr>Subway <wbr class="w961 w1799"></wbr>Resources. <wbr class="w480"></wbr>Photo by <wbr class="w1800"></wbr>Joe <wbr class="w481"></wbr>TestagroseOlder IND and <wbr class="w960"></wbr>BMT (R1s-<wbr class="w480"></wbr>R9s) subway cars <wbr class="w961 w1799"></wbr>characterized by a <wbr class="w481"></wbr>unpainted <wbr class="w480 w960"></wbr>brown dusty <wbr class="w1800"></wbr>surface. Retired from service in <wbr class="w480 w961 w1799"></wbr>1976.<a href="http://www.nycsubway.org/perl/show?2027">COAL <wbr class="w481 w960"></wbr>MINE:</a>Current term for all New York <wbr class="w480"></wbr>City Subway cars. <wbr class="w960"></wbr>They <wbr class="w1800"></wbr>are difficult <wbr class="w481 w961 w1799"></wbr>to hit and <wbr class="w480"></wbr>rarely go into service <wbr class="w960"></wbr>with writing on <wbr class="w480"></wbr>them.<a href="http://www.at149st.com/clean.html">CLEAN TRAIN:</a>(Fat, <wbr class="w481"></wbr>skinny, <wbr class="w961 w1799"></wbr>German <wbr class="w960 w1800"></wbr>thin) <wbr class="w480"></wbr>Interchangeable spray-can nozzles fitted to <wbr class="w480 w960"></wbr>paint <wbr class="w481"></wbr>can to vary width <wbr class="w961 w1799"></wbr>of <a href="spray.CAPS:A">spray.CAPS:A</a> <wbr class="w480"></wbr>technically <wbr class="w960 w1800"></wbr>and stylistically well-<wbr class="w481"></wbr>executed wild <wbr class="w480"></wbr>style piece. <wbr class="w960 w961 w1799"></wbr>Generally done in bright <wbr class="w480"></wbr>colors.<a href="http://www.at149st.com/images/real.jpg">BURNER:</a>1. To <wbr class="w481"></wbr>out do <wbr class="w960 w1800"></wbr>the competition. 2. <wbr class="w480"></wbr>To wear <a href="out.BURN:The"><wbr class="w961 w1799"></wbr>out.BURN:The</a> MTA's <wbr class="w960"></wbr>graffiti removal <wbr class="w480 w481"></wbr>programTHE BUFF:Removal of <wbr class="w960 w1800"></wbr>writing/art <wbr class="w480 w961 w1799"></wbr>workBUFF:Prolific writingBOMB:NYC <wbr class="w481"></wbr>subway <wbr class="w480 w960"></wbr>division called Brooklyn Manhattan <wbr class="w961 w1799"></wbr>Transit <wbr class="w480 w1800"></wbr>company. <wbr class="w960"></wbr>Includes J, <wbr class="w481"></wbr>L, M, N, Q, R, Z subway <a href="lines.BMT:Wide"><wbr class="w480"></wbr>lines.BMT:Wide</a> <wbr class="w960"></wbr>lettered <wbr class="w961 w1799"></wbr>piece stretching from <wbr class="w480 w481"></wbr>end to end <wbr class="w1800"></wbr>done below <wbr class="w960"></wbr>window level on subway <wbr class="w480"></wbr>car.BLOCK <wbr class="w481 w960 w961 w1799"></wbr>BUSTER:PlagiarismBITE:(n) Subway <wbr class="w480"></wbr>station where writers <wbr class="w960 w1800"></wbr>congregate and <wbr class="w481"></wbr>watch <wbr class="w480 w961 w1799"></wbr>trains. Benching (v) The act of <wbr class="w960"></wbr>watching <a href="trains.BENCH:Disagreement"><wbr class="w480"></wbr>trains.BENCH:Disag..</a> or <a href="conflict.BEEF:When"><wbr class="w481 w961 w1799 w1800"></wbr>conflict.BEEF:When</a> a <wbr class="w480 w960"></wbr>writer or crew bombs all major subway lines or <wbr class="w480"></wbr>the <wbr class="w481 w960"></wbr>streets <wbr class="w961 w1799"></wbr>of all five <wbr class="w1800"></wbr>boroughs..<a href="http://www.at149st.com/images/hulk.jpg">FLATS:</a>The <wbr class="w480"></wbr>portion of <wbr class="w960"></wbr>wall panels of the <wbr class="w481"></wbr>subway car <wbr class="w480"></wbr>interior <wbr class="w961 w1799"></wbr>above the seats <wbr class="w960"></wbr>located at <wbr class="w1800"></wbr>passenger's <wbr class="w480"></wbr>head level. <wbr class="w481"></wbr>The mild though <wbr class="w960"></wbr>frequent <wbr class="w961 w1799"></wbr>abrasion <wbr class="w480"></wbr>from passengers heads eventually <wbr class="w960"></wbr>buffs <wbr class="w481 w1800"></wbr>(removes) <wbr class="w480"></wbr>tags on these <wbr class="w961 w1799"></wbr>locations.(It is an <wbr class="w960"></wbr>undesirable <wbr class="w480"></wbr>location to <wbr class="w481"></wbr>tag.)HEAD BUFF <wbr class="w960"></wbr>SPOT:Handwriting <wbr class="w1800"></wbr>or <wbr class="w480 w961 w1799"></wbr>tagging style.HAND STYLE:The base <wbr class="w481 w960"></wbr>colors of a <wbr class="w480"></wbr>piece, falling within the <a href="outline.FILL-IN:Writing"><wbr class="w961 w1799"></wbr>outline.FILL-<wbr class="w960"></wbr>IN:Wr..</a> <wbr class="w480"></wbr>over <wbr class="w1800"></wbr>another <wbr class="w481"></wbr>writers name. It is the ultimate <wbr class="w480 w960"></wbr>act of <wbr class="w961 w1799"></wbr>disrespect.G0ING <wbr class="w481"></wbr>OVER:SucceedingGETTING <wbr class="w480 w960"></wbr>OVER:When <wbr class="w1800"></wbr>proliferation of name has led <wbr class="w961 w1799"></wbr>to high <wbr class="w480 w481 w960"></wbr>visibility.GETTING UP:Painted steel subway cars <wbr class="w480"></wbr>with <wbr class="w960"></wbr>flat <wbr class="w1800"></wbr>surfaces. (The <wbr class="w481 w961 w1799"></wbr>preferred subway cars <wbr class="w480"></wbr>of old <wbr class="w960"></wbr>school writers. During the 1970s the IRT <wbr class="w480 w481"></wbr>division <wbr class="w961 w1799"></wbr>was <wbr class="w960 w1800"></wbr>composed exclusively of flats)HENRY <wbr class="w480"></wbr>SHOTS:Subway car <a href="interiors.INSIDES:NYC"><wbr class="w481 w960"></wbr>interiors.INSIDES:..</a> <wbr class="w961 w1799"></wbr>subway <wbr class="w480"></wbr>division called the <wbr class="w960 w1800"></wbr>Independent. Includes A, <wbr class="w481"></wbr>B, <wbr class="w480"></wbr>C, D, E, F, GG subway <a href="lines.IND:Synonymous"><wbr class="w960 w961 w1799"></wbr>lines.IND:Synonymous</a> with <wbr class="w480"></wbr>the term "Toy".HOT <wbr class="w481"></wbr>110:<wbr class="w1800"></wbr>(n) A <wbr class="w960"></wbr>tag, throw-up or <wbr class="w480"></wbr>piece (v) <wbr class="w961 w1799"></wbr>the act of <a href="writing.HIT:Photographic"><wbr class="w960"></wbr>writing.HIT:Photog..</a> <wbr class="w480 w481"></wbr>technique developed by Henry <wbr class="w960 w1800"></wbr>Chalfant. The <wbr class="w480"></wbr>camera <wbr class="w961 w1799"></wbr>remains in one spot <wbr class="w481"></wbr>with <wbr class="w960"></wbr>automatic film <wbr class="w480"></wbr>advance while the subject (train) <wbr class="w960"></wbr>moves. <wbr class="w961 w1799 w1800"></wbr>The end <wbr class="w480 w481"></wbr>result is a straight forward single <wbr class="w960"></wbr>image built <wbr class="w480"></wbr>from several frames <wbr class="w481 w961 w1799"></wbr>providing more detail. <wbr class="w480 w960 w1800"></wbr>Though the term is used infrequently the <wbr class="w480 w481"></wbr>technique has <wbr class="w960 w961 w1799"></wbr>become one of the standards for <wbr class="w480"></wbr>photo <wbr class="w1800"></wbr>documentation of <a href="trains.INVENT:Shoplifting"><wbr class="w481 w960"></wbr>trains.INVENT:Shop..</a> or <wbr class="w480 w961 w1799"></wbr>stealing. This term was used <wbr class="w960"></wbr>prior to 1974. The <wbr class="w480 w481"></wbr>contemporary <wbr class="w1800"></wbr>term is <a href="RACK.IRT:NYC">RACK.IRT:NYC</a> <wbr class="w960 w961 w1799"></wbr>subway <wbr class="w480"></wbr>division called Interborough <wbr class="w481"></wbr>Rapid Transit. <wbr class="w480 w960"></wbr>Includes 1, 2, 3, 4, 5, 6, 7, <wbr class="w961 w1799 w1800"></wbr>9 subway <a href="lines.KILL:To"><wbr class="w480"></wbr>lines.KILL:To</a> <wbr class="w960"></wbr>bomb <a href="excessively.KING:The"><wbr class="w481"></wbr>excessively.KING:The</a> most <wbr class="w480"></wbr>accomplished writer in <wbr class="w960"></wbr>a <wbr class="w961 w1799"></wbr>given <a href="category.LAY-UP:A">category.LAY-<wbr class="w481 w1800"></wbr>UP:A</a> <wbr class="w480"></wbr>single or double track where <wbr class="w960"></wbr>trains are parked <wbr class="w480"></wbr>during <wbr class="w961 w1799"></wbr>off-peak <wbr class="w481"></wbr>hours. Both tunnel <wbr class="w960"></wbr>and elevated <wbr class="w480 w1800"></wbr>lay-ups exist.LETTER LINES:The IND and <wbr class="w481 w960 w961 w1799"></wbr>BMT <wbr class="w480"></wbr>divisions of The New York City SubwayMARRIED <wbr class="w480 w960"></wbr>COUPLE:Two <wbr class="w1800"></wbr>subway cars <wbr class="w481 w961 w1799"></wbr>permanently attached <wbr class="w480"></wbr>which <wbr class="w960"></wbr>share a motor. Identified by their <wbr class="w480 w481"></wbr>consecutive <wbr class="w960 w961 w1799"></wbr>numbers. These <wbr class="w1800"></wbr>cars were desirable <wbr class="w480"></wbr>when art work on <wbr class="w481 w960"></wbr>connected car was directly <wbr class="w480 w961 w1799"></wbr>relevant.MOTION <wbr class="w960"></wbr>TAGGING:Writing on <wbr class="w1800"></wbr>subway <wbr class="w481"></wbr>cars <wbr class="w480"></wbr>while they are in <wbr class="w960"></wbr>service. Also <wbr class="w961 w1799"></wbr>referred to as <wbr class="w480"></wbr>MOTIONINGMTA:Bronx <wbr class="w481"></wbr>crew <wbr class="w960"></wbr>from the late <wbr class="w1800"></wbr>1970s led <wbr class="w480"></wbr>by CHINO MALO and <wbr class="w961 w1799"></wbr>REE aka <wbr class="w960"></wbr>OPEL.<a href="http://www.at149st.com/mta.html">2. Mad <wbr class="w481"></wbr>Transit <wbr class="w480"></wbr>Artists</a>Includes BMT, IND and IRT <wbr class="w960"></wbr>subway <wbr class="w480 w1800"></wbr>divisions as <wbr class="w961 w1799"></wbr>well as <wbr class="w481"></wbr>surface transit <wbr class="w480 w960"></wbr>divisions.<a href="http://www.mta.nyc.ny.us/">1. Metropolitan Transit <wbr class="w480"></wbr>Authority</a>NUMBER <wbr class="w481 w960 w961 w1799"></wbr>LINES:The IRT <wbr class="w1800"></wbr>division of The <wbr class="w480"></wbr>New York City SubwayNEW <wbr class="w960"></wbr>SCHOOL:This date <wbr class="w481"></wbr>can <wbr class="w480"></wbr>vary <wbr class="w961 w1799"></wbr>greatly depending upon who <wbr class="w960"></wbr>you <wbr class="w480 w1800"></wbr>ask.Contemporary writing culture <wbr class="w481"></wbr>(post 1984).OLD <wbr class="w480 w960 w961 w1799"></wbr>SCHOOL:This date can vary greatly depending upon <wbr class="w480"></wbr>who <wbr class="w960 w1800"></wbr>you <wbr class="w481"></wbr>ask.The writing culture <wbr class="w961 w1799"></wbr>prior to <wbr class="w480"></wbr>1984.OUTLINE:A <wbr class="w960"></wbr>painting below the <wbr class="w481"></wbr>windows and <wbr class="w480"></wbr>between the doors <wbr class="w1800"></wbr>of a <wbr class="w960 w961 w1799"></wbr>subway car.<a href="http://www.at149st.com/images/blade2.jpg">PANEL <wbr class="w480"></wbr>PIECE:</a>The skeleton <wbr class="w481"></wbr>or frame work of a <wbr class="w960"></wbr>piece <wbr class="w480"></wbr>FINAL OUTLINE: After <wbr class="w961 w1799"></wbr>fill-in and <wbr class="w1800"></wbr>designs have <wbr class="w480 w481 w960"></wbr>been applied the outline is re-executed to <wbr class="w480"></wbr>define the <a href="letters.PIECE:A"><wbr class="w960 w961 w1799"></wbr>letters.PIECE:A</a> <wbr class="w481"></wbr>writer's painting, <wbr class="w480 w1800"></wbr>short for <a href="masterpiece.PIECING:The"><wbr class="w960"></wbr>masterpiece.PIECIN..</a> execution of a <wbr class="w480 w481 w961 w1799"></wbr>piece.PIECE BOOK <wbr class="w960"></wbr>OR BLACK BOOK:A writer's sketch <wbr class="w480"></wbr>book. <wbr class="w1800"></wbr>Used for <wbr class="w960"></wbr>personal <wbr class="w481"></wbr>art <wbr class="w961 w1799"></wbr>development and or <wbr class="w480"></wbr>the collection of <wbr class="w960"></wbr>other artists <a href="work.PRODUCTION:Large"><wbr class="w480 w481"></wbr>work.PRODUCTION:La..</a> scale <wbr class="w961 w1799 w1800"></wbr>murals with <wbr class="w960"></wbr>detailed <wbr class="w480"></wbr>pieces and <wbr class="w481"></wbr>illustrations. (Contemporary term <wbr class="w480 w960"></wbr>used mainly for <wbr class="w961 w1799"></wbr>street <wbr class="w1800"></wbr>murals.)PULL-IN <wbr class="w481"></wbr>PULL-<wbr class="w480"></wbr>OUT:This <wbr class="w960"></wbr>is essentially a five to fifteen minute <wbr class="w480"></wbr>lay-<wbr class="w961 w1799"></wbr>up. At the <wbr class="w960"></wbr>end <wbr class="w481"></wbr>of some <wbr class="w1800"></wbr>subway routes trains <wbr class="w480"></wbr>park in a tunnel for <wbr class="w960"></wbr>several minutes <wbr class="w961 w1799"></wbr>before <wbr class="w480 w481"></wbr>going back into service. During <wbr class="w960"></wbr>this <wbr class="w1800"></wbr>time the <wbr class="w480"></wbr>trains are written on. Due <wbr class="w481 w961 w1799"></wbr>to time <wbr class="w960"></wbr>constraints <wbr class="w480"></wbr>pull in-pull outs were generally utilized <wbr class="w960"></wbr>for <wbr class="w480 w1800"></wbr>throw-<wbr class="w481"></wbr>ups. It <wbr class="w961 w1799"></wbr>was one of the more dangerous <wbr class="w480 w960"></wbr>approaches to writing.RACKING OR <wbr class="w481"></wbr>RACKING <wbr class="w480 w960 w961 w1799"></wbr>UP:Shoplifting <wbr class="w1800"></wbr>or <a href="stealing.RACK:A">stealing.RACK:A</a> store where <wbr class="w480 w960"></wbr>shoplifting can be <wbr class="w481"></wbr>done.<a href="http://www.nycsubway.org/perl/show?4918">RIDGIE:</a>See <wbr class="w961 w1799"></wbr>image at NYC <wbr class="w480"></wbr>Subway <wbr class="w960"></wbr>Resources. <wbr class="w1800"></wbr>Collection of Joe <wbr class="w480 w481"></wbr>TestagroseSubway car with <wbr class="w960 w961 w1799"></wbr>corrugated, stainless-<wbr class="w480"></wbr>steel sides. An <wbr class="w481"></wbr>undesirable <wbr class="w960"></wbr>surface <wbr class="w1800"></wbr>for burners. <wbr class="w480"></wbr>Ridgies <wbr class="w961 w1799"></wbr>ran on the BMT and IND <wbr class="w481 w960"></wbr>divisions and <wbr class="w480"></wbr>were preferred by throw-up <wbr class="w960"></wbr>artists.ROLLER <wbr class="w480 w961 w1799 w1800"></wbr>LETTERS:Names <wbr class="w481"></wbr>rendered with bucket <wbr class="w960"></wbr>paint and <wbr class="w480"></wbr>rollers.<a href="http://www.at149st.com/scratch.html">SCRATCHITI:</a>A media coined <wbr class="w961 w1799"></wbr>term <wbr class="w481"></wbr>for <wbr class="w960"></wbr>the <wbr class="w480 w1800"></wbr>scratchings rendered on to the windows of subway <wbr class="w480 w960"></wbr>cars.<a href="http://www.nycsubway.org/perl/show?96659">SLANTS:</a>See <wbr class="w481 w961 w1799"></wbr>image at NYC Subway <wbr class="w480"></wbr>Resources.hoto <wbr class="w1800"></wbr>by <wbr class="w960"></wbr>Robert MencherIND R-40 subway <wbr class="w480"></wbr>cars <wbr class="w481"></wbr>with <wbr class="w961 w1799"></wbr>slanted <a href="face.STEEL:Any"><wbr class="w960"></wbr>face.STEEL:Any</a> type of train. <wbr class="w480"></wbr>New school term used <wbr class="w1800"></wbr>to <wbr class="w481 w960"></wbr>distinguish train <wbr class="w961 w1799"></wbr>and <wbr class="w480"></wbr>wall work.THE SYSTEM:The New <wbr class="w960"></wbr>York City Subway <wbr class="w480 w481"></wbr>systemSTYLE WARS:2. <wbr class="w1800"></wbr>Documentary <wbr class="w961 w1799"></wbr>film <wbr class="w960"></wbr>on Hip Hop <wbr class="w480"></wbr>by Henry Chalfant and <wbr class="w481"></wbr>Tony Silver (RIP). <wbr class="w960"></wbr>Proved <wbr class="w480"></wbr>to be an <wbr class="w961 w1799"></wbr>extremely <wbr class="w1800"></wbr>inspirational element for <wbr class="w481 w960"></wbr>the <wbr class="w480"></wbr>New School.1. Competition between artists <wbr class="w961 w1799"></wbr>to <wbr class="w480 w960"></wbr>determine superior <wbr class="w481 w1800"></wbr>creative ability.<a href="http://www.at149st.com/tags.html">TAG:</a>(n) A <wbr class="w480"></wbr>writer's <wbr class="w960"></wbr>name and signature. (v) <wbr class="w961 w1799"></wbr>The <wbr class="w481"></wbr>execution <wbr class="w480"></wbr>of a <a href="signature.TAGGING-UP:The"><wbr class="w960"></wbr>signature.TAGGING-..</a> <wbr class="w1800"></wbr>execution of a <wbr class="w480"></wbr>signature.<a href="http://www.at149st.com/throwups.html">THROW-<wbr class="w960"></wbr>UP:</a>A <wbr class="w481 w961 w1799"></wbr>quickly executed piece <wbr class="w480"></wbr>consisting of an outline <wbr class="w960"></wbr>with or without <wbr class="w1800"></wbr>thin <wbr class="w480 w481"></wbr>layer of <wbr class="w961 w1799"></wbr>spray paint for <a href="fill-in.THROWIE:Contemporary">fill-<wbr class="w960"></wbr>in.THROWIE:Co..</a> <wbr class="w480"></wbr>term for throw-up.<a href="http://www.at149st.com/images/caz.jpg">TOP-TO-<wbr class="w481"></wbr>BOTTOM or (T <wbr class="w960"></wbr>to <wbr class="w961 w1799"></wbr>B):</a>A <wbr class="w480 w1800"></wbr>piece which extends from the top of the subway <wbr class="w480 w960"></wbr>car <wbr class="w481"></wbr>to the bottom.TOY:2. A <wbr class="w961 w1799"></wbr>small felt tip <wbr class="w480"></wbr>marker.1. <wbr class="w960 w1800"></wbr>Inexperienced or <wbr class="w481"></wbr>incompetent <a href="writer.UP:Describes"><wbr class="w480"></wbr>writer.UP:Describes</a> a <wbr class="w960 w961 w1799"></wbr>writer whose work appears <wbr class="w480"></wbr>regularly on <wbr class="w481"></wbr>the trains <wbr class="w1800"></wbr>or <wbr class="w960"></wbr>through out the <wbr class="w480"></wbr>city.WALL <wbr class="w961 w1799"></wbr>PAPER:Repetition of a name <wbr class="w481 w960"></wbr>written <wbr class="w480"></wbr>making enough coverage so that a <wbr class="w1800"></wbr>pattern <wbr class="w480 w960 w961 w1799"></wbr>develops, much like <wbr class="w481"></wbr>wall <a href="paper.WAK:Substandard">paper.WAK:Substand..</a> or <wbr class="w480 w960"></wbr>incorrect.WILD STYLE:3. Classic <wbr class="w961 w1799"></wbr>film on Hip <wbr class="w481 w1800"></wbr>Hop <wbr class="w480 w960"></wbr>culture directed by Charlie Ahearn.<a href="http://www.at149st.com/wild.html">A complicated <wbr class="w480 w960"></wbr>construction of <wbr class="w481 w961 w1799"></wbr>interlocking letters.</a>2.<a href="http://www.at149st.com/ws.html">1. Bronx <wbr class="w480 w1800"></wbr>crew <wbr class="w960"></wbr>from the 1970s led by Tracy <wbr class="w481"></wbr>168.</a><a href="http://www.at149st.com/images/dondi7.jpg">WINDOW <wbr class="w480 w961 w1799"></wbr>DOWN:</a>New York <wbr class="w960"></wbr>City Transit Authority track <wbr class="w480"></wbr>maintenance <wbr class="w481 w1800"></wbr>worker.WORK <wbr class="w960"></wbr>BUM:A piece <wbr class="w961 w1799"></wbr>done below <wbr class="w480"></wbr>the windows of a subway <a href="car.WRITER:Practitioner"><wbr class="w481 w960"></wbr>car.WRITER:Practit..</a> of <wbr class="w480"></wbr>the art of <wbr class="w1800"></wbr>writing.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_none stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline-a">vandal.cleaning feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title w_list w_data w_short_list w_short_data layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_paragraph w_short_text w_long_paragraph w_long_text layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles w_texts w_separators colors-use-same-as-previous layout one i first_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i last_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one-2"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3-l-one"></div><style id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-color">body{background-color: rgba(32, 26, 21, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title w_list w_data w_short_list w_short_data layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_paragraph w_short_text w_long_paragraph w_long_text layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles w_texts w_separators colors-use-same-as-previous layout one i first_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i last_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one-2"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3-l-one"></div><style id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-color">body{background-color: rgba(32, 26, 21, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+</div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="b3eb529f-90c0-4056-9dbe-ea43716940f0" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-b3eb529f-90c0-4056-9dbe-ea43716940f0"><div kind="group" index="column" class="group column group column" id="u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-b3eb529f-90c0-4056-9dbe-ea43716940f0-g-column-t-paragraph"><p><span class="first-letter">A</span>ll-CITY:Railroad freight <a href="cars.FREIGHTS:throw-ups">cars.FREIGHTS:thro..</a> <wbr class="w480 w960"></wbr>done on subway car panels <wbr class="w481 w961 w1799"></wbr>at window <a href="level.FLOATERS:Rows"><wbr class="w480 w960 w1800"></wbr>level.FLOATERS:Rows</a> of throw-ups of the same <a href="name.FAMLIES:Graduation"><wbr class="w480 w481 w960 w961 w1799"></wbr>name.FAMLIES:Gradu..</a> of <a href="colors.FADE:Slang">colors.FADE:Slang</a> for <wbr class="w480 w960 w1800"></wbr>police. Derived form the <wbr class="w481 w961 w1799"></wbr>television series <wbr class="w480 w960"></wbr>Hawaii 5-<a href="O.5-O:Plain">O.5-O:Plain</a> cloths police officer or <a href="detective.DT:Part"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>detective.DT:Part</a> of a group or <wbr class="w480 w960"></wbr>actionDOWN:Excellent, of the highest <a href="order.DOPE:Stainless-steel"><wbr class="w480 w481 w960 w961 w1799"></wbr>order.DOPE:Stainle..</a> <wbr class="w1800"></wbr>(R-46)subway car, so named <wbr class="w480 w960"></wbr>for the bell that rings <wbr class="w481 w961 w1799"></wbr>alerting passengers of <wbr class="w480 w960"></wbr>closing <wbr class="w1800"></wbr>doors.<a href="http://www.at149st.com/images/ding.jpg">DING DONG</a>Don't Get <a href="AroundD.G.A.:Polka"><wbr class="w480 w481 w960 w961 w1799"></wbr>AroundD.G.A.:Polka</a> dots, checkers stars swirls <wbr class="w480 w960"></wbr>are placed over <wbr class="w1800"></wbr>the fill-<wbr class="w481 w961 w1799"></wbr>in to in hence and <wbr class="w480 w960"></wbr>compliment fill-in . Designs are limited only by <wbr class="w480 w960"></wbr>an <wbr class="w481 w961 w1799"></wbr>artists <wbr class="w1800"></wbr>imagination and technical <a href="ability.DESIGNS:Excellent"><wbr class="w480 w960"></wbr>ability.DESIGNS:Ex..</a> (derived from <wbr class="w481 w961 w1799"></wbr>definite and <wbr class="w480 w960"></wbr>death).DEF:To <wbr class="w1800"></wbr>scribble or write on someone <wbr class="w480 w960"></wbr>else's name. It <wbr class="w481 w961 w1799"></wbr>is considered highly <wbr class="w480 w960"></wbr>disrespectful.CROSSING <wbr class="w1800"></wbr>OUT:Organized group of <wbr class="w480 w481 w960 w961 w1799"></wbr>writersCREW:See image at NYC Subway Resources. <wbr class="w480 w960"></wbr>Photo by Joe <wbr class="w481 w961 w1799 w1800"></wbr>TestagroseOlder IND and BMT (R1s-<wbr class="w480 w960"></wbr>R9s) subway cars characterized by a <wbr class="w481 w961 w1799"></wbr>unpainted <wbr class="w480 w960"></wbr>brown dusty <wbr class="w1800"></wbr>surface. Retired from service in <wbr class="w480 w960"></wbr>1976.<a href="http://www.nycsubway.org/perl/show?2027">COAL <wbr class="w481 w961 w1799"></wbr>MINE:</a>Current term for all New York <wbr class="w480 w960"></wbr>City Subway <wbr class="w1800"></wbr>cars. They are difficult <wbr class="w481 w961 w1799"></wbr>to hit and <wbr class="w480 w960"></wbr>rarely go into service with writing on <wbr class="w480 w960"></wbr>them.<a href="http://www.at149st.com/clean.html">CLEAN <wbr class="w1800"></wbr>TRAIN:</a>(Fat, <wbr class="w481 w961 w1799"></wbr>skinny, German thin) <wbr class="w480 w960"></wbr>Interchangeable spray-can nozzles fitted to <wbr class="w480 w960"></wbr>paint <wbr class="w481 w961 w1799"></wbr>can to <wbr class="w1800"></wbr>vary width of <a href="spray.CAPS:A">spray.CAPS:A</a> <wbr class="w480 w960"></wbr>technically and stylistically well-<wbr class="w481 w961 w1799"></wbr>executed wild <wbr class="w480 w960"></wbr>style piece. <wbr class="w1800"></wbr>Generally done in bright <wbr class="w480 w960"></wbr>colors.<a href="http://www.at149st.com/images/real.jpg">BURNER:</a>1. To <wbr class="w481 w961 w1799"></wbr>out do the competition. 2. <wbr class="w480 w960"></wbr>To wear <a href="out.BURN:The"><wbr class="w1800"></wbr>out.BURN:The</a> MTA's graffiti removal <wbr class="w480 w481 w960 w961 w1799"></wbr>programTHE BUFF:Removal of writing/art <wbr class="w480 w960 w1800"></wbr>workBUFF:Prolific writingBOMB:NYC <wbr class="w481 w961 w1799"></wbr>subway <wbr class="w480 w960"></wbr>division called Brooklyn Manhattan Transit <wbr class="w480 w960 w1800"></wbr>company. Includes J, <wbr class="w481 w961 w1799"></wbr>L, M, N, Q, R, Z subway <a href="lines.BMT:Wide"><wbr class="w480 w960"></wbr>lines.BMT:Wide</a> lettered piece stretching from <wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>end to end done below window level on subway <wbr class="w480 w960"></wbr>car.BLOCK <wbr class="w481 w961 w1799"></wbr>BUSTER:PlagiarismBITE:(n) Subway <wbr class="w480 w960 w1800"></wbr>station where writers congregate and <wbr class="w481 w961 w1799"></wbr>watch <wbr class="w480 w960"></wbr>trains. Benching (v) The act of watching <a href="trains.BENCH:Disagreement"><wbr class="w480 w960 w1800"></wbr>trains.BENCH:Disag..</a> or <a href="conflict.BEEF:When"><wbr class="w481 w961 w1799"></wbr>conflict.BEEF:When</a> a <wbr class="w480 w960"></wbr>writer or crew bombs all major subway lines <wbr class="w1800"></wbr>or <wbr class="w480 w960"></wbr>the <wbr class="w481 w961 w1799"></wbr>streets of all five boroughs..<a href="http://www.at149st.com/images/hulk.jpg">FLATS:</a>The <wbr class="w480 w960"></wbr>portion of wall panels of the <wbr class="w481 w961 w1799"></wbr>subway car <wbr class="w480 w960 w1800"></wbr>interior above the seats located at passenger's <wbr class="w480 w960"></wbr>head level. <wbr class="w481 w961 w1799"></wbr>The mild though frequent <wbr class="w1800"></wbr>abrasion <wbr class="w480 w960"></wbr>from passengers heads eventually buffs <wbr class="w481 w961 w1799"></wbr>(removes) <wbr class="w480 w960"></wbr>tags on these locations.(It is <wbr class="w1800"></wbr>an undesirable <wbr class="w480 w960"></wbr>location to <wbr class="w481 w961 w1799"></wbr>tag.)HEAD BUFF SPOT:Handwriting or <wbr class="w480 w960"></wbr>tagging style.HAND STYLE:The <wbr class="w1800"></wbr>base <wbr class="w481 w961 w1799"></wbr>colors of a <wbr class="w480 w960"></wbr>piece, falling within the <a href="outline.FILL-IN:Writing">outline.FILL-IN:Wr..</a> <wbr class="w480 w960"></wbr>over another <wbr class="w481 w961 w1799"></wbr>writers name. <wbr class="w1800"></wbr>It is the ultimate <wbr class="w480 w960"></wbr>act of disrespect.G0ING <wbr class="w481 w961 w1799"></wbr>OVER:SucceedingGETTING <wbr class="w480 w960"></wbr>OVER:When proliferation <wbr class="w1800"></wbr>of name has led to high <wbr class="w480 w481 w960 w961 w1799"></wbr>visibility.GETTING UP:Painted steel subway cars <wbr class="w480 w960"></wbr>with flat <wbr class="w1800"></wbr>surfaces. (The <wbr class="w481 w961 w1799"></wbr>preferred subway cars <wbr class="w480 w960"></wbr>of old school writers. During the 1970s the IRT <wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>division was composed exclusively of flats)HENRY <wbr class="w480 w960"></wbr>SHOTS:Subway car <a href="interiors.INSIDES:NYC"><wbr class="w481 w961 w1799"></wbr>interiors.INSIDES:..</a> <wbr class="w1800"></wbr>subway <wbr class="w480 w960"></wbr>division called the Independent. Includes A, <wbr class="w481 w961 w1799"></wbr>B, <wbr class="w480 w960"></wbr>C, D, E, F, GG subway <a href="lines.IND:Synonymous"><wbr class="w1800"></wbr>lines.IND:Synonymous</a> with <wbr class="w480 w960"></wbr>the term "Toy".HOT <wbr class="w481 w961 w1799"></wbr>110:(n) A tag, throw-up or <wbr class="w480 w960"></wbr>piece (v) the act <wbr class="w1800"></wbr>of <a href="writing.HIT:Photographic">writing.HIT:Photog..</a> <wbr class="w480 w481 w960 w961 w1799"></wbr>technique developed by Henry Chalfant. The <wbr class="w480 w960"></wbr>camera remains in one <wbr class="w1800"></wbr>spot <wbr class="w481 w961 w1799"></wbr>with automatic film <wbr class="w480 w960"></wbr>advance while the subject (train) moves. The end <wbr class="w480 w481 w960 w961 w1799"></wbr>result is a <wbr class="w1800"></wbr>straight forward single image built <wbr class="w480 w960"></wbr>from several frames <wbr class="w481 w961 w1799"></wbr>providing more detail. <wbr class="w480 w960"></wbr>Though the <wbr class="w1800"></wbr>term is used infrequently the <wbr class="w480 w481 w960 w961 w1799"></wbr>technique has become one of the standards for <wbr class="w480 w960"></wbr>photo <wbr class="w1800"></wbr>documentation of <a href="trains.INVENT:Shoplifting"><wbr class="w481 w961 w1799"></wbr>trains.INVENT:Shop..</a> or <wbr class="w480 w960"></wbr>stealing. This term was used prior to 1974. The <wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>contemporary term is <a href="RACK.IRT:NYC">RACK.IRT:NYC</a> subway <wbr class="w480 w960"></wbr>division called Interborough <wbr class="w481 w961 w1799"></wbr>Rapid Transit. <wbr class="w480 w960 w1800"></wbr>Includes 1, 2, 3, 4, 5, 6, 7, 9 subway <a href="lines.KILL:To"><wbr class="w480 w960"></wbr>lines.KILL:To</a> bomb <a href="excessively.KING:The"><wbr class="w481 w961 w1799"></wbr>excessively.KING:The</a> most <wbr class="w480 w960 w1800"></wbr>accomplished writer in a given <a href="category.LAY-UP:A">category.LAY-<wbr class="w481 w961 w1799"></wbr>UP:A</a> <wbr class="w480 w960"></wbr>single or double track where trains are <wbr class="w1800"></wbr>parked <wbr class="w480 w960"></wbr>during off-peak <wbr class="w481 w961 w1799"></wbr>hours. Both tunnel and elevated <wbr class="w480 w960"></wbr>lay-ups exist.LETTER LINES:The IND <wbr class="w1800"></wbr>and <wbr class="w481 w961 w1799"></wbr>BMT <wbr class="w480 w960"></wbr>divisions of The New York City SubwayMARRIED <wbr class="w480 w960"></wbr>COUPLE:Two subway cars <wbr class="w481 w961 w1799"></wbr>permanently <wbr class="w1800"></wbr>attached <wbr class="w480 w960"></wbr>which share a motor. Identified by their <wbr class="w480 w481 w960 w961 w1799"></wbr>consecutive numbers. These cars were <wbr class="w1800"></wbr>desirable <wbr class="w480 w960"></wbr>when art work on <wbr class="w481 w961 w1799"></wbr>connected car was directly <wbr class="w480 w960"></wbr>relevant.MOTION TAGGING:Writing on <wbr class="w1800"></wbr>subway <wbr class="w481 w961 w1799"></wbr>cars <wbr class="w480 w960"></wbr>while they are in service. Also referred to as <wbr class="w480 w960"></wbr>MOTIONINGMTA:Bronx <wbr class="w481 w961 w1799"></wbr>crew from <wbr class="w1800"></wbr>the late 1970s led <wbr class="w480 w960"></wbr>by CHINO MALO and REE aka OPEL.<a href="http://www.at149st.com/mta.html">2. Mad <wbr class="w481 w961 w1799"></wbr>Transit <wbr class="w480 w960"></wbr>Artists</a>Includes BMT, IND <wbr class="w1800"></wbr>and IRT subway <wbr class="w480 w960"></wbr>divisions as well as <wbr class="w481 w961 w1799"></wbr>surface transit <wbr class="w480 w960"></wbr>divisions.<a href="http://www.mta.nyc.ny.us/">1. Metropolitan Transit <wbr class="w480 w960 w1800"></wbr>Authority</a>NUMBER <wbr class="w481 w961 w1799"></wbr>LINES:The IRT division of The <wbr class="w480 w960"></wbr>New York City SubwayNEW SCHOOL:This date <wbr class="w481 w961 w1799"></wbr>can <wbr class="w480 w960 w1800"></wbr>vary greatly depending upon who you <wbr class="w480 w960"></wbr>ask.Contemporary writing culture <wbr class="w481 w961 w1799"></wbr>(post 1984).OLD <wbr class="w480 w960 w1800"></wbr>SCHOOL:This date can vary greatly depending upon <wbr class="w480 w960"></wbr>who you <wbr class="w481 w961 w1799"></wbr>ask.The writing culture prior to <wbr class="w480 w960 w1800"></wbr>1984.OUTLINE:A painting below the <wbr class="w481 w961 w1799"></wbr>windows and <wbr class="w480 w960"></wbr>between the doors of a subway car.<a href="http://www.at149st.com/images/blade2.jpg">PANEL <wbr class="w480 w960 w1800"></wbr>PIECE:</a>The skeleton <wbr class="w481 w961 w1799"></wbr>or frame work of a piece <wbr class="w480 w960"></wbr>FINAL OUTLINE: After fill-in and designs have <wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>been applied the outline is re-executed to <wbr class="w480 w960"></wbr>define the <a href="letters.PIECE:A">letters.PIECE:A</a> <wbr class="w481 w961 w1799"></wbr>writer's painting, <wbr class="w480 w960 w1800"></wbr>short for <a href="masterpiece.PIECING:The">masterpiece.PIECIN..</a> execution of a <wbr class="w480 w481 w960 w961 w1799"></wbr>piece.PIECE BOOK OR BLACK BOOK:A writer's <wbr class="w1800"></wbr>sketch <wbr class="w480 w960"></wbr>book. Used for personal <wbr class="w481 w961 w1799"></wbr>art development and or <wbr class="w480 w960"></wbr>the collection of other artists <a href="work.PRODUCTION:Large"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>work.PRODUCTION:La..</a> scale murals with detailed <wbr class="w480 w960"></wbr>pieces and <wbr class="w481 w961 w1799"></wbr>illustrations. (Contemporary <wbr class="w1800"></wbr>term <wbr class="w480 w960"></wbr>used mainly for street murals.)PULL-IN <wbr class="w481 w961 w1799"></wbr>PULL-<wbr class="w480 w960"></wbr>OUT:This is essentially a five to fifteen <wbr class="w1800"></wbr>minute <wbr class="w480 w960"></wbr>lay-up. At the end <wbr class="w481 w961 w1799"></wbr>of some subway routes trains <wbr class="w480 w960"></wbr>park in a tunnel for several <wbr class="w1800"></wbr>minutes before <wbr class="w480 w481 w960 w961 w1799"></wbr>going back into service. During this time the <wbr class="w480 w960"></wbr>trains are written on. Due <wbr class="w481 w961 w1799"></wbr>to <wbr class="w1800"></wbr>time constraints <wbr class="w480 w960"></wbr>pull in-pull outs were generally utilized for <wbr class="w480 w960"></wbr>throw-<wbr class="w481 w961 w1799"></wbr>ups. It was one of <wbr class="w1800"></wbr>the more dangerous <wbr class="w480 w960"></wbr>approaches to writing.RACKING OR <wbr class="w481 w961 w1799"></wbr>RACKING <wbr class="w480 w960"></wbr>UP:Shoplifting or <a href="stealing.RACK:A"><wbr class="w1800"></wbr>stealing.RACK:A</a> store where <wbr class="w480 w960"></wbr>shoplifting can be <wbr class="w481 w961 w1799"></wbr>done.<a href="http://www.nycsubway.org/perl/show?4918">RIDGIE:</a>See image at NYC <wbr class="w480 w960"></wbr>Subway <wbr class="w1800"></wbr>Resources. Collection of Joe <wbr class="w480 w481 w960 w961 w1799"></wbr>TestagroseSubway car with corrugated, stainless-<wbr class="w480 w960"></wbr>steel sides. <wbr class="w1800"></wbr>An <wbr class="w481 w961 w1799"></wbr>undesirable surface for burners. <wbr class="w480 w960"></wbr>Ridgies ran on the BMT and IND <wbr class="w481 w961 w1799"></wbr>divisions and <wbr class="w480 w960"></wbr>were <wbr class="w1800"></wbr>preferred by throw-up artists.ROLLER <wbr class="w480 w960"></wbr>LETTERS:Names <wbr class="w481 w961 w1799"></wbr>rendered with bucket paint and <wbr class="w480 w960 w1800"></wbr>rollers.<a href="http://www.at149st.com/scratch.html">SCRATCHITI:</a>A media coined term <wbr class="w481 w961 w1799"></wbr>for the <wbr class="w480 w960"></wbr>scratchings rendered on to the windows of <wbr class="w1800"></wbr>subway <wbr class="w480 w960"></wbr>cars.<a href="http://www.nycsubway.org/perl/show?96659">SLANTS:</a>See <wbr class="w481 w961 w1799"></wbr>image at NYC Subway <wbr class="w480 w960"></wbr>Resources.hoto by Robert MencherIND R-40 subway <wbr class="w480 w960 w1800"></wbr>cars <wbr class="w481 w961 w1799"></wbr>with slanted <a href="face.STEEL:Any">face.STEEL:Any</a> type of train. <wbr class="w480 w960"></wbr>New school term used to <wbr class="w481 w961 w1799"></wbr>distinguish train <wbr class="w1800"></wbr>and <wbr class="w480 w960"></wbr>wall work.THE SYSTEM:The New York City Subway <wbr class="w480 w481 w960 w961 w1799"></wbr>systemSTYLE WARS:2. Documentary film on <wbr class="w1800"></wbr>Hip Hop <wbr class="w480 w960"></wbr>by Henry Chalfant and <wbr class="w481 w961 w1799"></wbr>Tony Silver (RIP). Proved <wbr class="w480 w960"></wbr>to be an extremely inspirational <wbr class="w1800"></wbr>element for <wbr class="w481 w961 w1799"></wbr>the <wbr class="w480 w960"></wbr>New School.1. Competition between artists to <wbr class="w480 w960"></wbr>determine superior <wbr class="w481 w961 w1799"></wbr>creative <wbr class="w1800"></wbr>ability.<a href="http://www.at149st.com/tags.html">TAG:</a>(n) A <wbr class="w480 w960"></wbr>writer's name and signature. (v) The <wbr class="w481 w961 w1799"></wbr>execution <wbr class="w480 w960"></wbr>of a <a href="signature.TAGGING-UP:The">signature.TAGGING-..</a> <wbr class="w1800"></wbr>execution of a <wbr class="w480 w960"></wbr>signature.<a href="http://www.at149st.com/throwups.html">THROW-UP:</a>A <wbr class="w481 w961 w1799"></wbr>quickly executed piece <wbr class="w480 w960"></wbr>consisting of an outline with <wbr class="w1800"></wbr>or without thin <wbr class="w480 w481 w960 w961 w1799"></wbr>layer of spray paint for <a href="fill-in.THROWIE:Contemporary">fill-in.THROWIE:Co..</a> <wbr class="w480 w960"></wbr>term for throw-up.<a href="http://www.at149st.com/images/caz.jpg">TOP-TO-<wbr class="w481 w961 w1799 w1800"></wbr>BOTTOM or (T to B):</a>A <wbr class="w480 w960"></wbr>piece which extends from the top of the subway <wbr class="w480 w960"></wbr>car <wbr class="w481 w961 w1799"></wbr>to the <wbr class="w1800"></wbr>bottom.TOY:2. A small felt tip <wbr class="w480 w960"></wbr>marker.1. Inexperienced or <wbr class="w481 w961 w1799"></wbr>incompetent <a href="writer.UP:Describes"><wbr class="w480 w960"></wbr>writer.UP:Describes</a> <wbr class="w1800"></wbr>a writer whose work appears <wbr class="w480 w960"></wbr>regularly on <wbr class="w481 w961 w1799"></wbr>the trains or through out the <wbr class="w480 w960"></wbr>city.WALL <wbr class="w1800"></wbr>PAPER:Repetition of a name <wbr class="w481 w961 w1799"></wbr>written <wbr class="w480 w960"></wbr>making enough coverage so that a pattern <wbr class="w480 w960"></wbr>develops, much <wbr class="w1800"></wbr>like <wbr class="w481 w961 w1799"></wbr>wall <a href="paper.WAK:Substandard">paper.WAK:Substand..</a> or <wbr class="w480 w960"></wbr>incorrect.WILD STYLE:3. Classic film on Hip <wbr class="w481 w961 w1799"></wbr>Hop <wbr class="w480 w960"></wbr>culture <wbr class="w1800"></wbr>directed by Charlie Ahearn.<a href="http://www.at149st.com/wild.html">A complicated <wbr class="w480 w960"></wbr>construction of <wbr class="w481 w961 w1799"></wbr>interlocking letters.</a>2.<a href="http://www.at149st.com/ws.html">1. Bronx <wbr class="w480 w960 w1800"></wbr>crew from the 1970s led by Tracy <wbr class="w481 w961 w1799"></wbr>168.</a><a href="http://www.at149st.com/images/dondi7.jpg">WINDOW <wbr class="w480 w960"></wbr>DOWN:</a>New York City Transit Authority track <wbr class="w480 w960 w1800"></wbr>maintenance <wbr class="w481 w961 w1799"></wbr>worker.WORK BUM:A piece done below <wbr class="w480 w960"></wbr>the windows of a subway <a href="car.WRITER:Practitioner"><wbr class="w481 w961 w1799 w1800"></wbr>car.WRITER:Practit..</a> of <wbr class="w480 w960"></wbr>the art of writing.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-alternate-g-heading-t-headline-a">vandal.cleaning feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title w_list w_data w_short_list w_short_data layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_paragraph w_short_text w_long_paragraph w_long_text layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-desktop-l-one-3-l-one"></div><style id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-color">body{background-color: rgba(32, 26, 21, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title w_list w_data w_short_list w_short_data layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_short_headline w_short_title w_short_paragraph w_short_text w_long_paragraph w_long_text layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-cinema-l-one-3-l-one"></div><style id="u-49f75f26-4fe3-4d91-ad62-0fe6fe9d634f-color">body{background-color: rgba(32, 26, 21, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -1286,7 +1312,9 @@ setMargin = function(element, value, velocity) {
 setHamburger(findHamburger());
 
 window.addEventListener('resize', function() {
-  return setHamburger(findHamburger());
+  return setTimeout(function() {
+    return setHamburger(findHamburger());
+  }, 10);
 });
 
 window.addEventListener('scroll', function() {
@@ -1508,9 +1536,11 @@ global.Hamburger = require('./hamburger');
 
 global.Highlighter = require('./highlighter');
 
+global.Player = require('./player');
+
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
+},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"./player":8,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
 var appendPage, mainpage, page, ref, ref1, urls;
 
 page = require('./reflow');
@@ -1611,7 +1641,192 @@ module.exports = function() {
 };
 
 
-},{"./reflow":8}],8:[function(require,module,exports){
+},{"./reflow":9}],8:[function(require,module,exports){
+var Player, Youtube, iframe, revealed, rgb2hex;
+
+iframe = null;
+
+Youtube = null;
+
+Player = function(id, src, width, height, color, bg) {
+  if (src.indexOf('youtube') > -1) {
+    src += '&color=white&theme=light&modestbranding=1';
+  }
+  src = src.replace('COLOR', color).replace('BG', bg);
+  if (location.protocol !== 'https:') {
+    src = src.replace('https:', 'http:');
+  }
+  iframe = document.createElement('iframe');
+  iframe.id = id;
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.src = src;
+  iframe.width = width;
+  iframe.height = height;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.left = 0;
+  iframe.style.right = 0;
+  iframe.style.position = 'absolute';
+  iframe.style.opacity = 0.2;
+  iframe.onload = function() {
+    return iframe.style.opacity = 1;
+  };
+  return iframe;
+};
+
+revealed = null;
+
+Player.reveal = function(iframe) {
+  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
+  while (target = (target || iframe).parentNode) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (target.parentNode.classList.contains('group')) {
+        parent = target.parentNode;
+      } else {
+        parent = target;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
+      top = -play.offsetTop;
+      play.style.webkitTransformOrigin = 'top right';
+      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
+      target.classList.add('revealed');
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        if (sibling.nodeType === 1 && sibling !== parent) {
+          translateX = translateY = null;
+          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+            translateX = -diff;
+          }
+          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+              translateX = diff;
+            }
+          }
+          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+            translateY = -diff;
+          }
+          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+              translateY = diff;
+            }
+          }
+          if (Math.abs(translateX) > Math.abs(translateY)) {
+            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
+          } else {
+            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
+          }
+          console.log(translateX, translateY, sibling);
+        }
+      }
+    }
+  }
+};
+
+Player.hide = function(iframe) {
+  var i, len, parent, play, ref, ref1, sibling;
+  while (parent = (parent || iframe).parentNode) {
+    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
+      parent.classList.remove('revealed');
+      if (parent.parentNode.classList.contains('group')) {
+        parent = parent.parentNode;
+      }
+      play = parent.getElementsByClassName('play')[0];
+      play.style.webkitTransform = '';
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        sibling.style.webkitTransform = '';
+      }
+    }
+  }
+  return revealed = null;
+};
+
+window.addEventListener('resize', function() {
+  return setTimeout(function() {
+    return requestAnimationFrame(function() {
+      if (revealed) {
+        if (revealed.offsetWidth) {
+          return Player.reveal(revealed);
+        } else {
+          return Player.stop(revealed);
+        }
+      }
+    });
+  }, 10);
+});
+
+Player.stop = function(iframe) {
+  var old;
+  old = iframe;
+  iframe.style.opacity = 0;
+  setTimeout(function() {
+    var ref;
+    return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
+  }, 300);
+  Player.hide(iframe);
+  return iframe = null;
+};
+
+document.addEventListener('click', function(e) {
+  var bg, color, header, parent, play, ref, ref1, results, styles, target;
+  target = e.target;
+  results = [];
+  while (target) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (play = target.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+          Player.stop(iframe);
+        } else {
+          if (iframe) {
+            Player.stop(iframe);
+          }
+          color = bg = null;
+          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          parent = header || play;
+          while (parent) {
+            if (parent.nodeType === 1) {
+              styles = window.getComputedStyle(parent);
+              if (styles.color.indexOf('rgba') === -1 || !styles.color.match(/,\s*0\)/)) {
+                if (color == null) {
+                  color = styles.color;
+                }
+              }
+              if (styles['background-color'].indexOf('rgba') === -1 || !styles['background-color'].match(/,\s*0\)/)) {
+                if (bg == null) {
+                  bg = styles['background-color'];
+                }
+              }
+            }
+            parent = parent.parentNode;
+          }
+          iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
+          target.appendChild(iframe);
+          Player.reveal(iframe);
+        }
+        e.preventDefault();
+        break;
+      }
+    }
+    results.push(target = target.parentNode);
+  }
+  return results;
+});
+
+rgb2hex = function(rgb) {
+  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+  if (rgb && rgb.length === 4) {
+    return ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2);
+  }
+};
+
+window.exports = window.Player = Player;
+
+
+},{}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
@@ -1876,7 +2091,7 @@ module.exports = function(callback) {
   } else {
     protocol = '';
   }
-  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.4/gss.document.parser.js";
+  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.8/gss.document.parser.js";
   if (location.toString().indexOf('//localhost:8080') > -1) {
     return module.exports.load(protocol + "//localhost:8080/node_modules/gss-document/dist/gss.document.parser.js", callback, function() {
       return module.exports.load(url, callback);
