@@ -1,20 +1,4 @@
-name: vandalcleaning
-favicon: null
-layout_spectrum: 1
 typography_spectrum: 0.20326
-title: vandal.cleaning
-cta:
-  domain: null
-  bucket: null
-  version: null
-analytics:
-  google: null
-  facebook: null
-  twitter: null
-opengraph:
-  image: null
-  type: null
-  appId: null
 color:
   brandColors:
     - '#ff6600'
@@ -26,4 +10,21 @@ color:
   lightness: 0.3125
   saturation: 0.4375
   rhythmicContrast: 0.75
+opengraph:
+  image: null
+  type: null
+  appId: null
+layout_spectrum: 1
+analytics:
+  google: null
+  facebook: null
+  twitter: null
+name: vandalcleaning
+cta:
+  domain: null
+  bucket: null
+  version: null
+favicon: null
+title: vandal.cleaning
+description: Graffiti Reinigung
 purpose: []
